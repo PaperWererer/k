@@ -1,6 +1,5 @@
-local maxwell_library = Instance.new("ModuleScript")
+local maxwell_library = Instance.new("ModuleScript",game)
 maxwell_library.Name = "MaxwellLibrary"
-maxwell_library.Parent = game.CoreGui
 
 local assets = Instance.new("Folder")
 assets.Name = "Assets"
