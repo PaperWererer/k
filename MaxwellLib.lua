@@ -1,37 +1,23 @@
 local assets = loadstring(game:HttpGet("https://raw.githubusercontent.com/PaperWererer/k/main/CreateAssetFolder", true))()
 local Control = {}
 
-Control.SetUp = function()
-	local ui = assets.Maxwell:Clone()
-	ui.Name = game.HttpService:GenerateGUID(false)
-	ui.Enabled = true
-	
-	if game:GetService("RunService"):IsStudio() then
-		ui.Parent = game.Players.LocalPlayer.PlayerGui
-	else
-		ui.Parent = game.CoreGui
-	end
-	
-	game:GetService("UserInputService").InputBegan:Connect(function(key,istyping)
-		if istyping then return end
-		
-		if key.KeyCode == Enum.KeyCode.RightControl then
-			ui.Enabled = not ui.Enabled
-		end
-	end)
-	
-	return ui
+function Control.Setup()
+    local ui = assets.Maxwell:Clone()
+    ui.Parent = game.CoreGui
+    ui.Enabled = true
+    
+    game:GetService("UserInputService").InputBegan:Connect(function(key,istyping)
+    	if istyping then return end
+    	
+    	if key.KeyCode == Enum.KeyCode.RightControl then
+    		ui.Enabled = not ui.Enabled
+    	end
+    end)
+    
+    return ui
 end
-
-Control.AddSpacer = function(tab,spacername)
-	local newspace = assets.SpacerTemplate:Clone()
-	newspace.Parent = tab
-	newspace.Name = spacername
-	newspace.Visible = true
-	newspace.TextLabel.Text = spacername
-end
-
-Control.CreateNewTab = function(ui,tabname)
+    
+function Control.CreateNewTab(ui,tabname)
 	local newtab = assets.TabTemplate:Clone()
 	newtab.Parent = ui.Frame.Main
 	newtab.Name = tabname
@@ -59,10 +45,18 @@ Control.CreateNewTab = function(ui,tabname)
 	return {Tab = newtab,Button = tabbutton}
 end
 
-Control.CreateToggle = function(tab,name,func)
+function Control.AddSpacer(tab,spacername)
+	local newspace = assets.SpacerTemplate:Clone()
+	newspace.Parent = tab
+	newspace.Name = spacername
+	newspace.Visible = true
+	newspace.TextLabel.Text = spacername
+end
+
+function Control.CreateToggle(tab,name,func)
 	local State = {
 		Enabled = false,
-		Hovering = false,
+    	Hovering = false,
 		Debounce = false,
 	}
 
@@ -102,13 +96,13 @@ Control.CreateToggle = function(tab,name,func)
 				game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.15),{
 					BackgroundColor3 = Color3.fromRGB(255,255,255),
 					Size = UDim2.new(1,0,1,0),
-					Position = UDim2.new(0,0,0,0),
-				}):Play()
-				task.wait(0.1)
-				game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.1),{
-					Size = UDim2.new(0.5,0,1,0),
-					Position = UDim2.new(.5,0,0,0),
-				}):Play()
+    				Position = UDim2.new(0,0,0,0),
+    			}):Play()
+    			task.wait(0.1)
+    			game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.1),{
+    				Size = UDim2.new(0.5,0,1,0),
+    				Position = UDim2.new(.5,0,0,0),
+    			}):Play()
 			else
 				game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.15),{
 					BackgroundColor3 = Color3.fromRGB(150,150,150),
@@ -127,7 +121,7 @@ Control.CreateToggle = function(tab,name,func)
 	return {Button = temp,State = State}
 end
 
-Control.CreateButton = function(tab,name,func)
+function Control.CreateButton(tab,name,func)
 	local temp = assets.ActivateTemplate:Clone()
 	temp.Parent = tab
 	temp.Visible = true
@@ -140,7 +134,7 @@ Control.CreateButton = function(tab,name,func)
 	return {Button = temp}
 end
 
-Control.CreateDropDown = function(tab,refreshfunc)
+function Control.CreateDropDown(tab,refreshfunc)
 	local State = {
 		Selected = nil,
 	}
@@ -195,7 +189,7 @@ Control.CreateDropDown = function(tab,refreshfunc)
 			button.Visible = true
 			button.Parent = menu
 			pcall(function()
-				button.Text = v.Name
+    				button.Text = v.Name
 			end)
 			
 			button.MouseEnter:Connect(function()
