@@ -189,7 +189,11 @@ function Control.CreateDropDown(tab,refreshfunc)
 			button.Visible = true
 			button.Parent = menu
 			pcall(function()
-    				button.Text = v.Name
+				if v.Name then
+					button.Text = v.Name
+				else
+					button.Text = v
+				end
 			end)
 			
 			button.MouseEnter:Connect(function()
