@@ -134,6 +134,17 @@ function Control.CreateButton(tab,name,func)
 	return {Button = temp}
 end
 
+function Control.CreateLabel(tab,name)
+	local temp = assets.ActivateTemplate:Clone()
+	temp.Parent = tab
+	temp.Visible = true
+	temp.Text = name
+
+	temp.Button.BackgroundTransparency = 1
+
+	return {Label = temp}
+end
+
 function Control.CreateDropDown(tab,refreshfunc)
 	local State = {
 		Selected = nil,
