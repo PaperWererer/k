@@ -1,0 +1,871 @@
+if game.CoreGui:FindFirstChild("Elevate.Assets") then return game.CoreGui["Elevate.Assets"] end
+
+local elevate_assets = Instance.new("Folder",game.CoreGui)
+elevate_assets.Name = "Elevate.Assets"
+
+local tabtemplate1 = Instance.new("Frame")
+tabtemplate1.BackgroundColor3 = Color3.new(1, 1, 1)
+tabtemplate1.BackgroundTransparency = 1
+tabtemplate1.BorderSizePixel = 0
+tabtemplate1.Size = UDim2.new(1, 0, 0, 25)
+tabtemplate1.Visible = true
+tabtemplate1.Name = "TabTemplate1"
+tabtemplate1.Parent = elevate_assets
+
+local uigradient = Instance.new("UIGradient")
+uigradient.Parent = tabtemplate1
+
+local color = Instance.new("Frame")
+color.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+color.BorderSizePixel = 0
+color.Size = UDim2.new(0, 1, 1, 0)
+color.Visible = false
+color.Name = "Color"
+color.Parent = tabtemplate1
+
+local label = Instance.new("TextLabel")
+label.Font = Enum.Font.SourceSans
+label.Text = "Cosmetics"
+label.TextColor3 = Color3.new(0.588235, 0.588235, 0.588235)
+label.TextScaled = true
+label.TextSize = 14
+label.TextWrapped = true
+label.TextXAlignment = Enum.TextXAlignment.Left
+label.BackgroundColor3 = Color3.new(1, 1, 1)
+label.BackgroundTransparency = 1
+label.Position = UDim2.new(0.0582807101, 0, 0.159999996, 0)
+label.Size = UDim2.new(0.941719294, 0, 0.640000105, 0)
+label.Visible = true
+label.Name = "Label"
+label.Parent = tabtemplate1
+
+local tabtemplate2 = Instance.new("ScrollingFrame")
+tabtemplate2.ScrollBarImageTransparency = 0.8999999761581421
+tabtemplate2.ScrollBarThickness = 4
+tabtemplate2.Active = true
+tabtemplate2.BackgroundColor3 = Color3.new(1, 1, 1)
+tabtemplate2.BackgroundTransparency = 1
+tabtemplate2.BorderSizePixel = 0
+tabtemplate2.Size = UDim2.new(1, 0, 1, 0)
+tabtemplate2.Visible = true
+tabtemplate2.Name = "TabTemplate2"
+tabtemplate2.Parent = elevate_assets
+
+local uilist_layout = Instance.new("UIListLayout")
+uilist_layout.Padding = UDim.new(0.009999999776482582, 0)
+uilist_layout.FillDirection = Enum.FillDirection.Horizontal
+uilist_layout.SortOrder = Enum.SortOrder.LayoutOrder
+uilist_layout.Parent = tabtemplate2
+
+local list_template = Instance.new("Frame")
+list_template.BackgroundColor3 = Color3.new(1, 1, 1)
+list_template.BackgroundTransparency = 0.8999999761581421
+list_template.Size = UDim2.new(0.319999993, 0, 0, 200)
+list_template.Visible = true
+list_template.Name = "ListTemplate"
+list_template.Parent = tabtemplate2
+
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 6)
+corner.Name = "Corner"
+corner.Parent = list_template
+
+local ui = Instance.new("UIListLayout")
+ui.Padding = UDim.new(0, 4)
+ui.HorizontalAlignment = Enum.HorizontalAlignment.Center
+ui.SortOrder = Enum.SortOrder.LayoutOrder
+ui.Name = "UI"
+ui.Parent = list_template
+
+local label_2 = Instance.new("TextLabel")
+label_2.Font = Enum.Font.SourceSans
+label_2.Text = "General"
+label_2.TextColor3 = Color3.new(1, 1, 1)
+label_2.TextScaled = true
+label_2.TextSize = 18
+label_2.TextWrapped = true
+label_2.TextXAlignment = Enum.TextXAlignment.Left
+label_2.BackgroundColor3 = Color3.new(1, 1, 1)
+label_2.BackgroundTransparency = 1
+label_2.Position = UDim2.new(0.0500000007, 0, 0, 0)
+label_2.Size = UDim2.new(0.899999976, 0, 0, 15)
+label_2.Visible = true
+label_2.Name = "Label"
+label_2.Parent = list_template
+
+local  = Instance.new("Frame")
+.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+.BorderSizePixel = 0
+.Position = UDim2.new(0, 0, 0, 17)
+.Size = UDim2.new(1, 0, 0, 1)
+.Visible = true
+.Name = "!"
+.Parent = list_template
+
+local list_template_2 = Instance.new("Frame")
+list_template_2.BackgroundColor3 = Color3.new(1, 1, 1)
+list_template_2.BackgroundTransparency = 0.8999999761581421
+list_template_2.Size = UDim2.new(0.319999993, 0, 0, 200)
+list_template_2.Visible = true
+list_template_2.Name = "ListTemplate"
+list_template_2.Parent = tabtemplate2
+
+local corner_2 = Instance.new("UICorner")
+corner_2.CornerRadius = UDim.new(0, 6)
+corner_2.Name = "Corner"
+corner_2.Parent = list_template_2
+
+local ui_2 = Instance.new("UIListLayout")
+ui_2.Padding = UDim.new(0, 4)
+ui_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+ui_2.SortOrder = Enum.SortOrder.LayoutOrder
+ui_2.Name = "UI"
+ui_2.Parent = list_template_2
+
+local label_3 = Instance.new("TextLabel")
+label_3.Font = Enum.Font.SourceSans
+label_3.Text = "Viewport Frame"
+label_3.TextColor3 = Color3.new(1, 1, 1)
+label_3.TextScaled = true
+label_3.TextSize = 18
+label_3.TextWrapped = true
+label_3.TextXAlignment = Enum.TextXAlignment.Left
+label_3.BackgroundColor3 = Color3.new(1, 1, 1)
+label_3.BackgroundTransparency = 1
+label_3.Position = UDim2.new(0.0500000007, 0, 0, 0)
+label_3.Size = UDim2.new(0.899999976, 0, 0, 15)
+label_3.Visible = true
+label_3.Name = "Label"
+label_3.Parent = list_template_2
+
+local _2 = Instance.new("Frame")
+_2.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+_2.BorderSizePixel = 0
+_2.Position = UDim2.new(0, 0, 0, 17)
+_2.Size = UDim2.new(1, 0, 0, 1)
+_2.Visible = true
+_2.Name = "!"
+_2.Parent = list_template_2
+
+local list_template_3 = Instance.new("Frame")
+list_template_3.BackgroundColor3 = Color3.new(1, 1, 1)
+list_template_3.BackgroundTransparency = 0.8999999761581421
+list_template_3.Size = UDim2.new(0.319999993, 0, 0, 200)
+list_template_3.Visible = true
+list_template_3.Name = "ListTemplate"
+list_template_3.Parent = tabtemplate2
+
+local corner_3 = Instance.new("UICorner")
+corner_3.CornerRadius = UDim.new(0, 6)
+corner_3.Name = "Corner"
+corner_3.Parent = list_template_3
+
+local ui_3 = Instance.new("UIListLayout")
+ui_3.Padding = UDim.new(0, 4)
+ui_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+ui_3.SortOrder = Enum.SortOrder.LayoutOrder
+ui_3.Name = "UI"
+ui_3.Parent = list_template_3
+
+local label_4 = Instance.new("TextLabel")
+label_4.Font = Enum.Font.SourceSans
+label_4.Text = "Image Frame"
+label_4.TextColor3 = Color3.new(1, 1, 1)
+label_4.TextScaled = true
+label_4.TextSize = 18
+label_4.TextWrapped = true
+label_4.TextXAlignment = Enum.TextXAlignment.Left
+label_4.BackgroundColor3 = Color3.new(1, 1, 1)
+label_4.BackgroundTransparency = 1
+label_4.Position = UDim2.new(0.0500000007, 0, 0, 0)
+label_4.Size = UDim2.new(0.899999976, 0, 0, 15)
+label_4.Visible = true
+label_4.Name = "Label"
+label_4.Parent = list_template_3
+
+local _3 = Instance.new("Frame")
+_3.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+_3.BorderSizePixel = 0
+_3.Position = UDim2.new(0, 0, 0, 17)
+_3.Size = UDim2.new(1, 0, 0, 1)
+_3.Visible = true
+_3.Name = "!"
+_3.Parent = list_template_3
+
+local image_template = Instance.new("Frame")
+image_template.BackgroundColor3 = Color3.new(1, 1, 1)
+image_template.BackgroundTransparency = 1
+image_template.BorderSizePixel = 0
+image_template.Size = UDim2.new(0.899999976, 0, 0, 140)
+image_template.Visible = true
+image_template.Name = "ImageTemplate"
+image_template.Parent = elevate_assets
+
+local image = Instance.new("ImageLabel")
+image.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+image.ScaleType = Enum.ScaleType.Crop
+image.BackgroundColor3 = Color3.new(1, 1, 1)
+image.BackgroundTransparency = 1
+image.BorderSizePixel = 0
+image.Size = UDim2.new(1, 0, 1, 0)
+image.Visible = true
+image.Name = "Image"
+image.Parent = image_template
+
+local viewport_template = Instance.new("Frame")
+viewport_template.BackgroundColor3 = Color3.new(1, 1, 1)
+viewport_template.BackgroundTransparency = 1
+viewport_template.BorderSizePixel = 0
+viewport_template.Size = UDim2.new(0.899999976, 0, 0, 140)
+viewport_template.Visible = true
+viewport_template.Name = "ViewportTemplate"
+viewport_template.Parent = elevate_assets
+
+local viewport = Instance.new("Frame")
+viewport.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+viewport.BorderSizePixel = 0
+viewport.Size = UDim2.new(1, 0, 1, 0)
+viewport.Visible = true
+viewport.ZIndex = 5
+viewport.Name = "Viewport"
+viewport.Parent = viewport_template
+
+local uistroke = Instance.new("UIStroke")
+uistroke.Color = Color3.new(1, 1, 1)
+uistroke.Transparency = .9
+uistroke.Parent = viewport
+
+local uicorner = Instance.new("UICorner")
+uicorner.CornerRadius = UDim.new(0, 2)
+uicorner.Parent = viewport
+
+local viewport_frame = Instance.new("ViewportFrame")
+viewport_frame.BackgroundColor3 = Color3.new(1, 1, 1)
+viewport_frame.BackgroundTransparency = 1
+viewport_frame.Size = UDim2.new(1, 0, 1, 0)
+viewport_frame.Visible = true
+viewport_frame.ZIndex = 5
+viewport_frame.Parent = viewport
+
+local label_template = Instance.new("Frame")
+label_template.BackgroundColor3 = Color3.new(1, 1, 1)
+label_template.BackgroundTransparency = 1
+label_template.BorderSizePixel = 0
+label_template.Size = UDim2.new(0.899999976, 0, 0, 15)
+label_template.Visible = true
+label_template.Name = "LabelTemplate"
+label_template.Parent = elevate_assets
+
+local label_5 = Instance.new("TextLabel")
+label_5.Font = Enum.Font.SourceSans
+label_5.Text = "Text Label"
+label_5.TextColor3 = Color3.new(1, 1, 1)
+label_5.TextSize = 15
+label_5.TextWrapped = true
+label_5.TextXAlignment = Enum.TextXAlignment.Left
+label_5.BackgroundColor3 = Color3.new(1, 1, 1)
+label_5.BackgroundTransparency = 1
+label_5.Size = UDim2.new(1, 0, 0, 15)
+label_5.Visible = true
+label_5.Name = "Label"
+label_5.Parent = label_template
+
+local toggletemplate = Instance.new("Frame")
+toggletemplate.BackgroundColor3 = Color3.new(1, 1, 1)
+toggletemplate.BackgroundTransparency = 1
+toggletemplate.BorderSizePixel = 0
+toggletemplate.Size = UDim2.new(0.899999976, 0, 0, 15)
+toggletemplate.Visible = true
+toggletemplate.Name = "ToggleTemplate"
+toggletemplate.Parent = elevate_assets
+
+local label_6 = Instance.new("TextLabel")
+label_6.Font = Enum.Font.SourceSans
+label_6.Text = "Enable"
+label_6.TextColor3 = Color3.new(0.784314, 0.784314, 0.784314)
+label_6.TextScaled = true
+label_6.TextSize = 18
+label_6.TextWrapped = true
+label_6.TextXAlignment = Enum.TextXAlignment.Left
+label_6.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+label_6.BackgroundTransparency = 1
+label_6.Position = UDim2.new(0.138308093, 0, 0, 0)
+label_6.Size = UDim2.new(0.861691833, 0, 0, 15)
+label_6.Visible = true
+label_6.Name = "Label"
+label_6.Parent = toggletemplate
+
+local button = Instance.new("TextButton")
+button.Font = Enum.Font.SourceSans
+button.Text = ""
+button.TextColor3 = Color3.new(0, 0, 0)
+button.TextSize = 14
+button.BackgroundColor3 = Color3.new(1, 1, 1)
+button.BackgroundTransparency = 1
+button.Position = UDim2.new(0, 0, 0, 3)
+button.Size = UDim2.new(0, 12, 0, 12)
+button.Visible = true
+button.ZIndex = 5
+button.Name = "Button"
+button.Parent = toggletemplate
+
+local off = Instance.new("Frame")
+off.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+off.BorderColor3 = Color3.new(0.470588, 0.470588, 0.470588)
+off.BorderSizePixel = 0
+off.Size = UDim2.new(1, 0, 1, 0)
+off.Visible = true
+off.Name = "Off"
+off.Parent = button
+
+local on = Instance.new("Frame")
+on.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+on.BorderColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+on.Size = UDim2.new(1, 0, 1, 0)
+on.Visible = false
+on.ZIndex = 2
+on.Name = "On"
+on.Parent = button
+
+local uicorner_2 = Instance.new("UICorner")
+uicorner_2.CornerRadius = UDim.new(0, 1)
+uicorner_2.Parent = on
+
+local uistroke_2 = Instance.new("UIStroke")
+uistroke_2.Color = Color3.new(0.447059, 0.580392, 0.756863)
+uistroke_2.Parent = on
+
+local image_label = Instance.new("ImageLabel")
+image_label.Image = "http://www.roblox.com/asset/?id=4510424237"
+image_label.ImageColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+image_label.BackgroundColor3 = Color3.new(1, 1, 1)
+image_label.BackgroundTransparency = 1
+image_label.Size = UDim2.new(1, 0, 1, 0)
+image_label.Visible = true
+image_label.ZIndex = 2
+image_label.Parent = on
+
+local text_boxtemplate = Instance.new("Frame")
+text_boxtemplate.BackgroundColor3 = Color3.new(1, 1, 1)
+text_boxtemplate.BackgroundTransparency = 1
+text_boxtemplate.BorderSizePixel = 0
+text_boxtemplate.Size = UDim2.new(0.899999976, 0, 0, 35)
+text_boxtemplate.Visible = true
+text_boxtemplate.Name = "TextBoxTemplate"
+text_boxtemplate.Parent = elevate_assets
+
+local label_7 = Instance.new("TextLabel")
+label_7.Font = Enum.Font.SourceSans
+label_7.Text = "Text Box"
+label_7.TextColor3 = Color3.new(1, 1, 1)
+label_7.TextScaled = true
+label_7.TextSize = 18
+label_7.TextWrapped = true
+label_7.TextXAlignment = Enum.TextXAlignment.Left
+label_7.BackgroundColor3 = Color3.new(1, 1, 1)
+label_7.BackgroundTransparency = 1
+label_7.Size = UDim2.new(1, 0, 0, 15)
+label_7.Visible = true
+label_7.Name = "Label"
+label_7.Parent = text_boxtemplate
+
+local text_box = Instance.new("Frame")
+text_box.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+text_box.BorderSizePixel = 0
+text_box.Position = UDim2.new(0, 0, 0, 20)
+text_box.Size = UDim2.new(1, 0, 0, 15)
+text_box.Visible = true
+text_box.ZIndex = 5
+text_box.Name = "TextBox"
+text_box.Parent = text_boxtemplate
+
+local uistroke_3 = Instance.new("UIStroke")
+uistroke_3.Color = Color3.new(1, 1, 1)
+uistroke_3.Parent = text_box
+
+local uicorner_3 = Instance.new("UICorner")
+uicorner_3.CornerRadius = UDim.new(0, 2)
+uicorner_3.Parent = text_box
+
+local selection = Instance.new("TextBox")
+selection.Font = Enum.Font.SourceSans
+selection.PlaceholderColor3 = Color3.new(0.784314, 0.784314, 0.784314)
+selection.PlaceholderText = "Enter Text"
+selection.Text = ""
+selection.TextColor3 = Color3.new(1, 1, 1)
+selection.TextSize = 14
+selection.TextWrapped = true
+selection.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+selection.BackgroundTransparency = 1
+selection.Size = UDim2.new(1, 0, 0, 15)
+selection.Visible = true
+selection.ZIndex = 5
+selection.Name = "Selection"
+selection.Parent = text_box
+
+local slider_template = Instance.new("Frame")
+slider_template.BackgroundColor3 = Color3.new(1, 1, 1)
+slider_template.BackgroundTransparency = 1
+slider_template.BorderSizePixel = 0
+slider_template.Size = UDim2.new(0.899999976, 0, 0, 35)
+slider_template.Visible = true
+slider_template.Name = "SliderTemplate"
+slider_template.Parent = elevate_assets
+
+local label_8 = Instance.new("TextLabel")
+label_8.Font = Enum.Font.SourceSans
+label_8.Text = "Slider "
+label_8.TextColor3 = Color3.new(1, 1, 1)
+label_8.TextSize = 15
+label_8.TextWrapped = true
+label_8.TextXAlignment = Enum.TextXAlignment.Left
+label_8.BackgroundColor3 = Color3.new(1, 1, 1)
+label_8.BackgroundTransparency = 1
+label_8.Size = UDim2.new(1, 0, 0, 15)
+label_8.Visible = true
+label_8.Name = "Label"
+label_8.Parent = slider_template
+
+local bar = Instance.new("Frame")
+bar.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+bar.BorderSizePixel = 0
+bar.Position = UDim2.new(0, 0, 0, 24)
+bar.Size = UDim2.new(1, 0, 0, 7)
+bar.Visible = true
+bar.Name = "Bar"
+bar.Parent = slider_template
+
+local uistroke_4 = Instance.new("UIStroke")
+uistroke_4.Color = Color3.new(1, 1, 1)
+uistroke_4.Parent = bar
+
+local uicorner_4 = Instance.new("UICorner")
+uicorner_4.CornerRadius = UDim.new(0, 2)
+uicorner_4.Parent = bar
+
+local btn = Instance.new("TextButton")
+btn.Font = Enum.Font.SourceSans
+btn.Text = ""
+btn.TextColor3 = Color3.new(0, 0, 0)
+btn.TextSize = 14
+btn.BackgroundColor3 = Color3.new(1, 1, 1)
+btn.BackgroundTransparency = 1
+btn.BorderSizePixel = 0
+btn.Size = UDim2.new(1, 0, 1, 0)
+btn.Visible = true
+btn.ZIndex = 6
+btn.Name = "Btn"
+btn.Parent = bar
+
+local slider = Instance.new("Frame")
+slider.BackgroundColor3 = Color3.new(1, 1, 1)
+slider.BorderSizePixel = 0
+slider.Position = UDim2.new(0, 0, 0, -4)
+slider.Size = UDim2.new(0, 4, 0, 15)
+slider.Visible = true
+slider.ZIndex = 4
+slider.Name = "Slider"
+slider.Parent = bar
+
+local uistroke_5 = Instance.new("UIStroke")
+uistroke_5.Color = Color3.new(1, 1, 1)
+uistroke_5.Parent = slider
+
+local uicorner_5 = Instance.new("UICorner")
+uicorner_5.CornerRadius = UDim.new(1, 0)
+uicorner_5.Parent = slider
+
+local bfly = Instance.new("Frame")
+bfly.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+bfly.BorderSizePixel = 0
+bfly.Size = UDim2.new(0, 1, 1, 0)
+bfly.Visible = true
+bfly.ZIndex = 3
+bfly.Name = "Bfly"
+bfly.Parent = bar
+
+local uistroke_6 = Instance.new("UIStroke")
+uistroke_6.Color = Color3.new(1, 1, 1)
+uistroke_6.Parent = bfly
+
+local uicorner_6 = Instance.new("UICorner")
+uicorner_6.CornerRadius = UDim.new(1, 0)
+uicorner_6.Parent = bfly
+
+local dropdown_template = Instance.new("Frame")
+dropdown_template.BackgroundColor3 = Color3.new(1, 1, 1)
+dropdown_template.BackgroundTransparency = 1
+dropdown_template.BorderSizePixel = 0
+dropdown_template.Size = UDim2.new(0.899999976, 0, 0, 35)
+dropdown_template.Visible = true
+dropdown_template.Name = "DropDownTemplate"
+dropdown_template.Parent = elevate_assets
+
+local label_9 = Instance.new("TextLabel")
+label_9.Font = Enum.Font.SourceSans
+label_9.Text = "Filter"
+label_9.TextColor3 = Color3.new(1, 1, 1)
+label_9.TextScaled = true
+label_9.TextSize = 18
+label_9.TextWrapped = true
+label_9.TextXAlignment = Enum.TextXAlignment.Left
+label_9.BackgroundColor3 = Color3.new(1, 1, 1)
+label_9.BackgroundTransparency = 1
+label_9.Size = UDim2.new(1, 0, 0, 15)
+label_9.Visible = true
+label_9.Name = "Label"
+label_9.Parent = dropdown_template
+
+local dropdown = Instance.new("Frame")
+dropdown.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+dropdown.BorderSizePixel = 0
+dropdown.Position = UDim2.new(0, 0, 0, 20)
+dropdown.Size = UDim2.new(1, 0, 0, 15)
+dropdown.Visible = true
+dropdown.ZIndex = 5
+dropdown.Name = "DropDown"
+dropdown.Parent = dropdown_template
+
+local selection_2 = Instance.new("TextButton")
+selection_2.Font = Enum.Font.SourceSans
+selection_2.Text = "Select.."
+selection_2.TextColor3 = Color3.new(0.784314, 0.784314, 0.784314)
+selection_2.TextSize = 14
+selection_2.TextWrapped = true
+selection_2.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+selection_2.BackgroundTransparency = 1
+selection_2.Size = UDim2.new(1, 0, 0, 15)
+selection_2.Visible = true
+selection_2.ZIndex = 5
+selection_2.Name = "Selection"
+selection_2.Parent = dropdown
+
+local menu = Instance.new("ScrollingFrame")
+menu.ScrollBarImageColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+menu.ScrollBarImageTransparency = 1
+menu.ScrollBarThickness = 1
+menu.BackgroundColor3 = Color3.new(0, 0, 0)
+menu.BackgroundTransparency = 1
+menu.BorderSizePixel = 0
+menu.Position = UDim2.new(0, 0, 1, 0)
+menu.Size = UDim2.new(1, 0, 0, 0)
+menu.Visible = true
+menu.ZIndex = 5
+menu.Name = "Menu"
+menu.Parent = selection_2
+
+local open = Instance.new("BoolValue")
+open.Name = "Open"
+open.Parent = menu
+
+local ui_4 = Instance.new("UIListLayout")
+ui_4.SortOrder = Enum.SortOrder.LayoutOrder
+ui_4.Name = "UI"
+ui_4.Parent = menu
+
+local button_2 = Instance.new("TextButton")
+button_2.Font = Enum.Font.SourceSans
+button_2.Text = "notarchs"
+button_2.TextColor3 = Color3.new(0.745098, 0.745098, 0.745098)
+button_2.TextSize = 13
+button_2.TextWrapped = true
+button_2.BackgroundColor3 = Color3.new(0, 0, 0)
+button_2.BackgroundTransparency = 1
+button_2.BorderSizePixel = 0
+button_2.Size = UDim2.new(1, 0, 0, 15)
+button_2.Visible = true
+button_2.ZIndex = 5
+button_2.Name = "Button"
+button_2.Parent = menu
+
+local button_3 = Instance.new("TextButton")
+button_3.Font = Enum.Font.SourceSans
+button_3.Text = "aseden"
+button_3.TextColor3 = Color3.new(0.745098, 0.745098, 0.745098)
+button_3.TextSize = 13
+button_3.TextWrapped = true
+button_3.BackgroundColor3 = Color3.new(0, 0, 0)
+button_3.BackgroundTransparency = 1
+button_3.BorderSizePixel = 0
+button_3.Size = UDim2.new(1, 0, 0, 15)
+button_3.Visible = true
+button_3.ZIndex = 5
+button_3.Name = "Button"
+button_3.Parent = menu
+
+local uistroke_7 = Instance.new("UIStroke")
+uistroke_7.Color = Color3.new(1, 1, 1)
+uistroke_7.Parent = dropdown
+
+local uicorner_7 = Instance.new("UICorner")
+uicorner_7.CornerRadius = UDim.new(0, 2)
+uicorner_7.Parent = dropdown
+
+local ui_5 = Instance.new("UIListLayout")
+ui_5.SortOrder = Enum.SortOrder.LayoutOrder
+ui_5.Name = "UI"
+ui_5.Parent = dropdown
+
+local button_template = Instance.new("Frame")
+button_template.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+button_template.BorderSizePixel = 0
+button_template.Position = UDim2.new(0, 0, 0, 20)
+button_template.Size = UDim2.new(0.899999976, 0, 0, 15)
+button_template.Visible = true
+button_template.ZIndex = 5
+button_template.Name = "ButtonTemplate"
+button_template.Parent = elevate_assets
+
+local uistroke_8 = Instance.new("UIStroke")
+uistroke_8.Color = Color3.new(1, 1, 1)
+uistroke_8.Parent = button_template
+
+local uicorner_8 = Instance.new("UICorner")
+uicorner_8.CornerRadius = UDim.new(0, 2)
+uicorner_8.Parent = button_template
+
+local button_4 = Instance.new("TextButton")
+button_4.Font = Enum.Font.SourceSans
+button_4.TextColor3 = Color3.new(0.784314, 0.784314, 0.784314)
+button_4.TextSize = 14
+button_4.TextWrapped = true
+button_4.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+button_4.BackgroundTransparency = 0.800000011920929
+button_4.BorderSizePixel = 0
+button_4.Size = UDim2.new(1, 0, 1, 0)
+button_4.Visible = true
+button_4.ZIndex = 5
+button_4.Name = "Button"
+button_4.Parent = button_template
+
+local elevate = Instance.new("ScreenGui")
+elevate.IgnoreGuiInset = false
+elevate.ResetOnSpawn = true
+elevate.ZIndexBehavior = Enum.ZIndexBehavior.Global
+elevate.Name = "Elevate"
+elevate.Parent = elevate_assets
+
+local main = Instance.new("Frame")
+main.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+main.Position = UDim2.new(0.0192307681, 0, 0.0286783129, 0)
+main.Size = UDim2.new(0, 593, 0, 342)
+main.Visible = true
+main.Name = "Main"
+main.Parent = elevate
+
+local uistroke_9 = Instance.new("UIStroke")
+uistroke_9.Parent = main
+
+local uicorner_9 = Instance.new("UICorner")
+uicorner_9.CornerRadius = UDim.new(0, 2)
+uicorner_9.Parent = main
+
+local top = Instance.new("Frame")
+top.BackgroundColor3 = Color3.new(1, 1, 1)
+top.BackgroundTransparency = 0.8999999761581421
+top.Position = UDim2.new(0, 0, -2.23081713e-08, 0)
+top.Size = UDim2.new(1, 0, 0.0847013891, 0)
+top.Visible = true
+top.Name = "Top"
+top.Parent = main
+
+local uicorner_10 = Instance.new("UICorner")
+uicorner_10.CornerRadius = UDim.new(0, 2)
+uicorner_10.Parent = top
+
+local frame = Instance.new("Frame")
+frame.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+frame.BorderSizePixel = 0
+frame.Position = UDim2.new(0, 0, 1, -1)
+frame.Size = UDim2.new(1, 0, 0, 1)
+frame.Visible = true
+frame.Parent = top
+
+local label_10 = Instance.new("TextLabel")
+label_10.Font = Enum.Font.Unknown
+label_10.Text = "ELEVATE"
+label_10.TextColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+label_10.TextScaled = true
+label_10.TextSize = 14
+label_10.TextWrapped = true
+label_10.TextXAlignment = Enum.TextXAlignment.Left
+label_10.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+label_10.BackgroundTransparency = 1
+label_10.Position = UDim2.new(0.0564227551, 0, 0.140252218, 0)
+label_10.Size = UDim2.new(0.253409952, 0, 0.655202091, 0)
+label_10.Visible = true
+label_10.Name = "Label"
+label_10.Parent = top
+
+local logo = Instance.new("ImageLabel")
+logo.Image = "http://www.roblox.com/asset/?id=6798365555"
+logo.ImageColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+logo.ScaleType = Enum.ScaleType.Fit
+logo.BackgroundColor3 = Color3.new(1, 1, 1)
+logo.BackgroundTransparency = 1
+logo.BorderSizePixel = 0
+logo.Position = UDim2.new(0.0150817186, 0, 0.110752515, 0)
+logo.Size = UDim2.new(0.0329471566, 0, 0.72366792, 0)
+logo.Visible = true
+logo.Name = "Logo"
+logo.Parent = top
+
+local search = Instance.new("Frame")
+search.BackgroundColor3 = Color3.new(0, 0, 0)
+search.BackgroundTransparency = 0.800000011920929
+search.BorderSizePixel = 0
+search.Position = UDim2.new(0.756237924, 0, 0.162502483, 0)
+search.Size = UDim2.new(0.230326295, 0, 0.678426445, 0)
+search.Visible = true
+search.Name = "Search"
+search.Parent = top
+
+local text_box_2 = Instance.new("TextBox")
+text_box_2.Font = Enum.Font.SourceSans
+text_box_2.PlaceholderColor3 = Color3.new(0.470588, 0.470588, 0.470588)
+text_box_2.PlaceholderText = "Search.."
+text_box_2.Text = ""
+text_box_2.TextColor3 = Color3.new(1, 1, 1)
+text_box_2.TextSize = 14
+text_box_2.TextXAlignment = Enum.TextXAlignment.Left
+text_box_2.BackgroundColor3 = Color3.new(1, 1, 1)
+text_box_2.BackgroundTransparency = 1
+text_box_2.Position = UDim2.new(0.146430582, 0, 0, 0)
+text_box_2.Size = UDim2.new(0.853569448, 0, 1, 0)
+text_box_2.Visible = true
+text_box_2.Parent = search
+
+local logo_2 = Instance.new("ImageLabel")
+logo_2.Image = "http://www.roblox.com/asset/?id=5492253050"
+logo_2.ImageColor3 = Color3.new(0.6, 0.6, 0.6)
+logo_2.ScaleType = Enum.ScaleType.Fit
+logo_2.BackgroundColor3 = Color3.new(1, 1, 1)
+logo_2.BackgroundTransparency = 1
+logo_2.BorderSizePixel = 0
+logo_2.Position = UDim2.new(0.0199999996, 0, 0.206, 0)
+logo_2.Size = UDim2.new(0.0755473375, 0, 0.587589979, 0)
+logo_2.Visible = true
+logo_2.Name = "Logo"
+logo_2.Parent = search
+
+local drag_script = Instance.new("LocalScript")
+drag_script.Name = "DragScript"
+drag_script.Parent = top
+
+local bottom = Instance.new("Frame")
+bottom.BackgroundColor3 = Color3.new(1, 1, 1)
+bottom.BackgroundTransparency = 0.8999999761581421
+bottom.Position = UDim2.new(0, 0, 0.899999976, 0)
+bottom.Size = UDim2.new(1, 0, 0.100000001, 0)
+bottom.Visible = true
+bottom.Name = "Bottom"
+bottom.Parent = main
+
+local uicorner_11 = Instance.new("UICorner")
+uicorner_11.CornerRadius = UDim.new(0, 2)
+uicorner_11.Parent = bottom
+
+local frame_2 = Instance.new("Frame")
+frame_2.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+frame_2.BorderSizePixel = 0
+frame_2.Size = UDim2.new(1, 0, 0, 1)
+frame_2.Visible = true
+frame_2.Parent = bottom
+
+local buttons = Instance.new("Frame")
+buttons.BackgroundColor3 = Color3.new(1, 1, 1)
+buttons.BackgroundTransparency = 0.949999988079071
+buttons.BorderSizePixel = 0
+buttons.Position = UDim2.new(0, 0, 0.0850000232, 0)
+buttons.Size = UDim2.new(0.173608795, 0, 0.814999938, 0)
+buttons.Visible = true
+buttons.Name = "Buttons"
+buttons.Parent = main
+
+local sections = Instance.new("ScrollingFrame")
+sections.CanvasSize = UDim2.new(0, 0, 0, 0)
+sections.ScrollBarImageColor3 = Color3.new(0, 0, 0)
+sections.Active = true
+sections.BackgroundColor3 = Color3.new(1, 1, 1)
+sections.BackgroundTransparency = 1
+sections.Position = UDim2.new(0, 0, 0.0250000004, 0)
+sections.Size = UDim2.new(1, 0, 0.949999988, 0)
+sections.Visible = true
+sections.Name = "Sections"
+sections.Parent = buttons
+
+local uilist_layout_2 = Instance.new("UIListLayout")
+uilist_layout_2.Padding = UDim.new(0, 1)
+uilist_layout_2.SortOrder = Enum.SortOrder.LayoutOrder
+uilist_layout_2.Parent = sections
+
+local lists = Instance.new("Frame")
+lists.BackgroundColor3 = Color3.new(1, 1, 1)
+lists.BackgroundTransparency = 1
+lists.BorderSizePixel = 0
+lists.Position = UDim2.new(0.174999997, 0, 0.0850000009, 0)
+lists.Size = UDim2.new(0.824999988, 0, 0.814999998, 0)
+lists.Visible = true
+lists.Name = "Lists"
+lists.Parent = main
+
+local frame_3 = Instance.new("Frame")
+frame_3.BackgroundColor3 = Color3.new(1, 1, 1)
+frame_3.BackgroundTransparency = 1
+frame_3.BorderSizePixel = 0
+frame_3.Position = UDim2.new(0.0249999929, 0, 0.0249999855, 0)
+frame_3.Size = UDim2.new(0.975000024, 0, 0.949999988, 0)
+frame_3.Visible = true
+frame_3.Parent = lists
+
+local uiaspect_ratio_constraint = Instance.new("UIAspectRatioConstraint")
+uiaspect_ratio_constraint.AspectRatio = 1.7339180707931519
+uiaspect_ratio_constraint.Parent = main
+
+--//Modules
+
+local modules = {}
+
+--// Scripts
+
+-- DragScript
+task.spawn(function()
+	local script = drag_script
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local UIS = game:GetService('UserInputService')
+	local dragToggle = nil
+	local dragStart = nil
+	local startPos = nil
+	
+	script.Parent.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = script.Parent.Parent.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				local delta = input.Position - dragStart
+				local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+				game:GetService('TweenService'):Create(script.Parent.Parent, TweenInfo.new(0.2), {Position = position}):Play()
+			end
+		end
+	end)
+	
+end)
