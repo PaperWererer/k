@@ -150,8 +150,10 @@ function Control.CreateSlider(list,name,Min,Max)
 	}
 	
 	local plr = game.Players.LocalPlayer
-
-	local Template = script.Parent
+	local UIS = game:GetService("UserInputService")
+	local Template = assets.SliderTemplate:Clone()
+	Template.Parent = list
+	
 	local Bar = Template.Bar
 	local Slider = Bar.Slider
 	local Bfly = Bar.Bfly
@@ -197,7 +199,7 @@ function Control.CreateSlider(list,name,Min,Max)
 		State.Sliding = true
 	end)
 
-	UIP.InputEnded:Connect(function(key,istyping)
+	UIS.InputEnded:Connect(function(key,istyping)
 		if key.UserInputType == Enum.UserInputType.MouseButton1 then
 			print("Released")
 			State.Sliding = false
@@ -208,7 +210,6 @@ function Control.CreateSlider(list,name,Min,Max)
 
 	mouse.Move:Connect(function()
 		if State.Sliding then
-			local snapAmount = 100/intervals
 			local xOffset = (mouse.X-Bar.AbsolutePosition.X)
 			local xOffsetClamped = math.clamp(xOffset-2,-2,Bar.AbsoluteSize.X-4)
 
