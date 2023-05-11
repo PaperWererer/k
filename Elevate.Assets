@@ -476,7 +476,8 @@ button_4.Parent = button_template
 
 local elevate = Instance.new("ScreenGui")
 elevate.IgnoreGuiInset = false
-elevate.ResetOnSpawn = true
+elevate.ResetOnSpawn = false
+elevate.Enabled = false
 elevate.ZIndexBehavior = Enum.ZIndexBehavior.Global
 elevate.Name = "Elevate"
 elevate.Parent = elevate_assets
