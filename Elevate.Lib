@@ -82,7 +82,7 @@ function Control.CreateToggle(list,name)
 	local temp = assets.ToggleTemplate:Clone()
 	temp.Parent = list
 	temp.Visible = true
-	temp.TextLabel.Text = name
+	temp.Label.Text = name
 
 	temp.Button.InputBegan:Connect(function(key)
 		if key.UserInputType == Enum.UserInputType.MouseButton1 and not State.Debounce then
@@ -92,7 +92,7 @@ function Control.CreateToggle(list,name)
 			end)
 
 			State.Enabled = not State.Enabled
-			temp.Toggle.On.Visible = State.Enabled
+			temp.Button.On.Visible = State.Enabled
 		end
 	end)
 
