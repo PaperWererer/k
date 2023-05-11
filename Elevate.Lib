@@ -119,41 +119,58 @@ function Control.CreateLabel(list,name)
 	return {Label = temp}
 end
 
-function Control.CreateDropDown(list,refreshfunc)
+function Control.CreateTextbox(list,name)
+	local temp = assets.TextBoxTemplate:Clone()
+	temp.Parent = list
+	temp.Label.Text = name
+	
+	return {Textbox = temp.TextBox.Selection}
+end
+
+function Control.CreateViewport(list)
+	local temp = assets.ViewportTemplate:Clone()
+	temp.Parent = list
+	
+	return {Viewport = temp}
+end
+
+function Control.CreateImage(list,imageid)
+	local temp = assets.ImageTemplate:Clone()
+	temp.Parent = list
+	temp.Label.Text = name
+	temp.Image.Image = imageid
+	
+	return {Image = temp}
+end
+
+function Control.CreateDropDown(list,name,refreshfunc)
 	local State = {
 		Selected = nil,
 	}
 	
-	local drop = assets.DropDownTemplate:Clone()
-	drop.Parent = list
+	local templ = assets.DropDownTemplate:Clone()
+	temp.Parent = list
+	temp.Label.Text = name
 	
-	local menu = drop.Menu
-	local open = menu.Open.Value
+	local drop = temp.DropDown
+	local truedrop = drop.Parent
 	local selection = drop.Selection
+	local menu = selection.Menu
+	local open = menu.Open.Value
 
-	local function fitAll()
-		menu.CanvasSize = UDim2.new(1, 0, 0, menu.UI.AbsoluteContentSize.Y)
-	end
-
-	local function trigger()
+	function trigger()
 		if not open then
-			menu:TweenSize(UDim2.new(1,-8,5,0), "Out", "Sine", 0.15, true)
-			for _, button in pairs(menu:GetChildren()) do
-				if button:IsA("TextButton") then
-					button.Visible = true
-				end
-			end
-			wait(0.15)
-			fitAll()
+			menu:TweenSize(UDim2.new(1, 0, 0, 45), "Out", "Sine", 0.15, true)
+			drop:TweenSize(UDim2.new(1, 0, 0, 60), "Out", "Sine", 0.15, true)
+			truedrop:TweenSize(UDim2.new(0.9, 0, 0, 80), "Out", "Sine", 0.15, true)
+			menu.CanvasSize = UDim2.new(0,0,0,menu.UI.AbsoluteContentSize.Y)
+			menu.ScrollBarImageTransparency = 0
 			open = true
 		else
-			menu:TweenSize(UDim2.new(1,-8,0,0), "Out", "Sine", 0.15, true)
-			wait(0.05)
-			for _, button in pairs(menu:GetChildren()) do
-				if button:IsA("TextButton") then
-					button.Visible = false
-				end
-			end
+			menu:TweenSize(UDim2.new(1, 0, 0, 0), "Out", "Sine", 0.15, true)
+			drop:TweenSize(UDim2.new(1, 0, 0, 15), "Out", "Sine", 0.15, true)
+			truedrop:TweenSize(UDim2.new(0.9, 0, 0, 35), "Out", "Sine", 0.15, true)
+			menu.ScrollBarImageTransparency = 1
 			open = false
 		end
 	end
@@ -169,9 +186,9 @@ function Control.CreateDropDown(list,refreshfunc)
 		if items == nil or not items then items = {} end
 		
 		for i,v in pairs(items) do
-			local button = assets.Button2Template:Clone()
-			button.Visible = true
+			local button = assets.DropDown:Clone()
 			button.Parent = menu
+			
 			pcall(function()
 				if v.Name then
 					button.Text = v.Name
