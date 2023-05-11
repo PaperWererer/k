@@ -31,9 +31,9 @@ function Control.CreateNewTab(ui,tabname)
 	
 	tabbutton.Button.MouseButton1Click:Connect(function()
 		for i,v in pairs(ui.Main.Lists.Frame:GetChildren()) do
-			if v:IsA("Frame") then
-        			v.Visible = false
-      			end
+			pcall(function()
+				v.Visible = false
+			end)
 		end
     
     		for i,v in pairs(ui.Main.Buttons.Sections:GetChildren()) do
@@ -58,20 +58,25 @@ function Control.CreateNewTab(ui,tabname)
 	
 	return {Tab = newtab,Button = tabbutton}
 end
-
---[[
-function Control.AddSpacer(tab,spacername)
-	local newspace = assets.SpacerTemplate:Clone()
-	newspace.Parent = tab
-	newspace.Name = spacername
-	newspace.Visible = true
-	newspace.TextLabel.Text = spacername
+    
+function Control.CreateList(tab,listname)
+	local newlist = assets.ListTemplate:Clone()
+	newlist.Parent = tab
+	newlist.Name = listname
+	
+  	spawn(function()
+    		while task.wait() do
+      			newlist.Size = UDim2.new(0.32,0,0,newlist.UI.AbsoluteContentSize.Y+6)
+    		end
+  	end)
+	
+	return {List = newlist}
 end
 
 function Control.CreateToggle(tab,name,func)
 	local State = {
 		Enabled = false,
-    	Hovering = false,
+    		Hovering = false,
 		Debounce = false,
 	}
 
@@ -136,6 +141,7 @@ function Control.CreateToggle(tab,name,func)
 	return {Button = temp,State = State}
 end
 
+--[[
 function Control.CreateButton(tab,name,func)
 	local temp = assets.ActivateTemplate:Clone()
 	temp.Parent = tab
