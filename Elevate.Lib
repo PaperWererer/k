@@ -131,7 +131,7 @@ function Control.CreateViewport(list)
 	local temp = assets.ViewportTemplate:Clone()
 	temp.Parent = list
 	
-	return {Viewport = temp}
+	return {Viewport = temp.Viewport.ViewportFrame}
 end
 
 function Control.CreateImage(list,imageid)
@@ -143,12 +143,96 @@ function Control.CreateImage(list,imageid)
 	return {Image = temp}
 end
 
+function Control.CreateSlider(list,name,Min,Max)
+	local State = {
+		Sliding = false,
+		Value = Min,
+	}
+	
+	local plr = game.Players.LocalPlayer
+
+	local Template = script.Parent
+	local Bar = Template.Bar
+	local Slider = Bar.Slider
+	local Bfly = Bar.Bfly
+	local Button = Bar.Btn
+	local Label = Template.Label
+
+	local mouse = plr:GetMouse()
+
+	local function RoundToNearest(x,roundto)
+		return (math.floor(x*roundto)/roundto)
+	end
+
+	local function NRound(x)
+		local y = x - math.floor(x)
+		if y < 0.5 then
+			return y
+		else
+			return math.ceil(x)
+		end
+	end
+
+	local function getClosestNumber(values, target)
+		local closestNumber = nil
+		local closestDifference = math.huge
+
+		for _, value in ipairs(values) do
+			local difference = math.abs(value - target)
+
+			if difference < closestDifference then
+				closestNumber = value
+				closestDifference = difference
+			end
+		end
+
+		return closestNumber
+	end
+
+	local function lerp(start, finish, alpha)
+		return start + (finish - start) * alpha
+	end
+
+	Button.MouseButton1Down:Connect(function()
+		State.Sliding = true
+	end)
+
+	UIP.InputEnded:Connect(function(key,istyping)
+		if key.UserInputType == Enum.UserInputType.MouseButton1 then
+			print("Released")
+			State.Sliding = false
+		end
+	end)
+
+	Label.Text = name.." - "..State.Value
+
+	mouse.Move:Connect(function()
+		if State.Sliding then
+			local snapAmount = 100/intervals
+			local xOffset = (mouse.X-Bar.AbsolutePosition.X)
+			local xOffsetClamped = math.clamp(xOffset-2,-2,Bar.AbsoluteSize.X-4)
+
+			local sliderPosNew = UDim2.new(0,xOffsetClamped,0,-4)
+
+			Slider.Position = sliderPosNew
+			Bfly.Size = UDim2.new(0,xOffsetClamped+2,1,0)
+			local newval = lerp(Min,Max,xOffsetClamped/(Bar.AbsoluteSize.X-4))
+			print(newval)
+
+			State.Value = math.clamp(math.floor(newval),Min,Max)
+			Label.Text = name.." - "..State.Value
+		end
+	end)
+	
+	return {Image = temp}
+end
+
 function Control.CreateDropDown(list,name,refreshfunc)
 	local State = {
 		Selected = nil,
 	}
 	
-	local templ = assets.DropDownTemplate:Clone()
+	local temp = assets.DropDownTemplate:Clone()
 	temp.Parent = list
 	temp.Label.Text = name
 	
