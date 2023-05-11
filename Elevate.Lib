@@ -35,7 +35,7 @@ function Control.CreateNewTab(ui,tabname)
       			end
 		end
     
-    		for i,v in pairs(ui.Main.List.Frame:GetChildren()) do
+    		for i,v in pairs(ui.Main.Buttons.Sections:GetChildren()) do
 			if v:IsA("Frame") then
         			v.Transparency = 1
         			v.Color.Visible = false
