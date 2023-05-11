@@ -99,39 +99,33 @@ function Control.CreateToggle(list,name)
 	return {Button = temp,State = State}
 end
 
---[[
-function Control.CreateButton(tab,name,func)
-	local temp = assets.ActivateTemplate:Clone()
-	temp.Parent = tab
-	temp.Visible = true
-	temp.Text = name
-
-	temp.MouseButton1Click:Connect(function()
+function Control.CreateButton(list,name,func)
+	local temp = assets.ButtonTemplate:Clone()
+	temp.Parent = list
+	temp.Button.Text = name
+	
+	temp.Button.MouseButton1Click:Connect(function()
 		func()
 	end)
 
 	return {Button = temp}
 end
 
-function Control.CreateLabel(tab,name)
-	local temp = assets.ActivateTemplate:Clone()
-	temp.Parent = tab
-	temp.Visible = true
-	temp.Text = name
-
-	temp.Button.BackgroundTransparency = 1
-
+function Control.CreateLabel(list,name)
+	local temp = assets.LabelTemplate:Clone()
+	temp.Parent = list
+	temp.Label.Text = name
+	
 	return {Label = temp}
 end
 
-function Control.CreateDropDown(tab,refreshfunc)
+function Control.CreateDropDown(list,refreshfunc)
 	local State = {
 		Selected = nil,
 	}
 	
 	local drop = assets.DropDownTemplate:Clone()
-	drop.Parent = tab
-	drop.Visible = true
+	drop.Parent = list
 	
 	local menu = drop.Menu
 	local open = menu.Open.Value
@@ -209,6 +203,5 @@ function Control.CreateDropDown(tab,refreshfunc)
 	
 	return {Drop = drop,State = State}
 end
-]]--
 
 return Control
