@@ -19,7 +19,7 @@ end
     
 function Control.CreateNewTab(ui,tabname)
 	local newtab = assets.TabTemplate2:Clone()
-	newtab.Parent = ui.Main.List.Frame
+	newtab.Parent = ui.Main.Lists.Frame
 	newtab.Name = tabname
 	newtab.Visible = false
 
