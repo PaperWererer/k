@@ -61,6 +61,7 @@ viewport.Parent = viewport_template
 
 local uistroke = Instance.new("UIStroke")
 uistroke.Color = Color3.new(1, 1, 1)
+uistroke.Transparency = .9
 uistroke.Parent = viewport
 
 local uicorner = Instance.new("UICorner")
@@ -161,6 +162,7 @@ uicorner_2.Parent = on
 
 local uistroke_2 = Instance.new("UIStroke")
 uistroke_2.Color = Color3.new(0.447059, 0.580392, 0.756863)
+uistroke_2.Transparency = .9
 uistroke_2.Parent = on
 
 local image_label = Instance.new("ImageLabel")
@@ -209,6 +211,7 @@ text_box.Parent = text_boxtemplate
 
 local uistroke_3 = Instance.new("UIStroke")
 uistroke_3.Color = Color3.new(1, 1, 1)
+uistroke_3.Transparency = .9
 uistroke_3.Parent = text_box
 
 local uicorner_3 = Instance.new("UICorner")
@@ -265,6 +268,7 @@ bar.Parent = slider_template
 
 local uistroke_4 = Instance.new("UIStroke")
 uistroke_4.Color = Color3.new(1, 1, 1)
+uistroke_4.Transparency = .9
 uistroke_4.Parent = bar
 
 local uicorner_4 = Instance.new("UICorner")
@@ -297,6 +301,7 @@ slider.Parent = bar
 
 local uistroke_5 = Instance.new("UIStroke")
 uistroke_5.Color = Color3.new(1, 1, 1)
+uistroke_5.Transparency = .9
 uistroke_5.Parent = slider
 
 local uicorner_5 = Instance.new("UICorner")
@@ -314,6 +319,7 @@ bfly.Parent = bar
 
 local uistroke_6 = Instance.new("UIStroke")
 uistroke_6.Color = Color3.new(1, 1, 1)
+uistroke_6.Transparency = .9
 uistroke_6.Parent = bfly
 
 local uicorner_6 = Instance.new("UICorner")
@@ -423,6 +429,7 @@ button_3.Parent = menu
 
 local uistroke_7 = Instance.new("UIStroke")
 uistroke_7.Color = Color3.new(1, 1, 1)
+uistroke_7.Transparency = .9
 uistroke_7.Parent = dropdown
 
 local uicorner_7 = Instance.new("UICorner")
@@ -446,6 +453,7 @@ button_template.Parent = elevate_assets
 
 local uistroke_8 = Instance.new("UIStroke")
 uistroke_8.Color = Color3.new(1, 1, 1)
+uistroke_8.Transparency = .9
 uistroke_8.Parent = button_template
 
 local uicorner_8 = Instance.new("UICorner")
@@ -482,6 +490,7 @@ main.Name = "Main"
 main.Parent = elevate
 
 local uistroke_9 = Instance.new("UIStroke")
+uistroke_9.Transparency = .9
 uistroke_9.Parent = main
 
 local uicorner_9 = Instance.new("UICorner")
