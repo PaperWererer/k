@@ -9,7 +9,7 @@ function Control.Setup(toggle)
     game:GetService("UserInputService").InputBegan:Connect(function(key,istyping)
     	if istyping then return end
     	
-    	if key.KeyCode == Enum.KeyCode.RightControl then
+    	if key.KeyCode == toggle then
     		ui.Enabled = not ui.Enabled
     	end
     end)
