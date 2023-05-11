@@ -52,7 +52,7 @@ function Control.CreateNewTab(ui,tabname)
 	
   	spawn(function()
     		while task.wait() do
-      			--newtab.CanvasSize = UDim2.new(1, 0, 0, newtab.UI.AbsoluteContentSize.Y)
+      			newtab.CanvasSize = UDim2.new(0, 0, 0, newtab.UIListLayout.AbsoluteContentSize.Y)
     		end
   	end)
 	
