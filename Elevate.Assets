@@ -23,9 +23,9 @@ color.Visible = false
 color.Name = "Color"
 color.Parent = tabtemplate1
 
-local label = Instance.new("TextLabel")
+local label = Instance.new("TextButton")
 label.Font = Enum.Font.SourceSans
-label.Text = "Cosmetics"
+label.Text = "Button"
 label.TextColor3 = Color3.new(0.588235, 0.588235, 0.588235)
 label.TextScaled = true
 label.TextSize = 14
@@ -36,7 +36,7 @@ label.BackgroundTransparency = 1
 label.Position = UDim2.new(0.0582807101, 0, 0.159999996, 0)
 label.Size = UDim2.new(0.941719294, 0, 0.640000105, 0)
 label.Visible = true
-label.Name = "Label"
+label.Name = "Button"
 label.Parent = tabtemplate1
 
 local tabtemplate2 = Instance.new("ScrollingFrame")
