@@ -31,30 +31,29 @@ function Control.CreateNewTab(ui,tabname)
 	tabbutton.MouseButton1Click:Connect(function()
 		for i,v in pairs(ui.Main.List.Frame:GetChildren()) do
 			if v:IsA("Frame") then
-        v.Visible = false
-      end
+        			v.Visible = false
+      			end
 		end
     
-    for i,v in pairs(ui.Main.List.Frame:GetChildren()) do
+    		for i,v in pairs(ui.Main.List.Frame:GetChildren()) do
 			if v:IsA("Frame") then
-        v.Visible = false
-      end
+        			--v.Visible = false
+      			end
 		end
     
 		newtab.Visible = true
 	end)
 	
-	newtab.ChildAdded:Connect(fitAll)
-	newtab.ChildRemoved:Connect(fitAll)
-  spawn(function()
-    while task.wait() do
-      newtab.CanvasSize = UDim2.new(1, 0, 0, newtab.UI.AbsoluteContentSize.Y)
-    end
-  end)
+  	spawn(function()
+    		while task.wait() do
+      			newtab.CanvasSize = UDim2.new(1, 0, 0, newtab.UI.AbsoluteContentSize.Y)
+    		end
+  	end)
 	
 	return {Tab = newtab,Button = tabbutton}
 end
 
+--[[
 function Control.AddSpacer(tab,spacername)
 	local newspace = assets.SpacerTemplate:Clone()
 	newspace.Parent = tab
@@ -240,5 +239,6 @@ function Control.CreateDropDown(tab,refreshfunc)
 	
 	return {Drop = drop,State = State}
 end
+]]--
 
 return Control
