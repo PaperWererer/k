@@ -1,4 +1,4 @@
-local assets = loadstring(game:HttpGet("https://raw.githubusercontent.com/PaperWererer/k/main/Elevate.Assets"))
+local assets = loadstring(game:HttpGet("https://raw.githubusercontent.com/PaperWererer/k/main/Elevate.Assets", true))()
 local Control = {}
 
 function Control.Setup(toggle)
