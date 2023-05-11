@@ -73,68 +73,26 @@ function Control.CreateList(tab,listname)
 	return {List = newlist}
 end
 
-function Control.CreateToggle(tab,name,func)
+function Control.CreateToggle(list,name)
 	local State = {
 		Enabled = false,
-    		Hovering = false,
 		Debounce = false,
 	}
 
 	local temp = assets.ToggleTemplate:Clone()
-	temp.Parent = tab
+	temp.Parent = list
 	temp.Visible = true
 	temp.TextLabel.Text = name
 
-	temp.Slider.Button.MouseEnter:Connect(function()
-		if not State.Debounce then
-			if State.Enabled then
-				game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.15),{BackgroundColor3 = Color3.fromRGB(200,200,200)}):Play()
-			elseif not State.Enabled then
-				game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.15),{BackgroundColor3 = Color3.fromRGB(60,60,60)}):Play()
-			end
-		end
-	end)
-
-	temp.Slider.Button.MouseLeave:Connect(function()
-		if State.Enabled then
-			game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.15),{BackgroundColor3 = Color3.fromRGB(255,255,255)}):Play()
-		elseif not State.Enabled then
-			game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.15),{BackgroundColor3 = Color3.fromRGB(150,150,150)}):Play()
-		end
-	end)
-
-	temp.Slider.Button.InputBegan:Connect(function(key)
+	temp.Button.InputBegan:Connect(function(key)
 		if key.UserInputType == Enum.UserInputType.MouseButton1 and not State.Debounce then
 			State.Debounce = true
-			task.delay(.5,function()
+			task.delay(.35,function()
 				State.Debounce = false
 			end)
 
 			State.Enabled = not State.Enabled
-
-			if State.Enabled then
-				game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.15),{
-					BackgroundColor3 = Color3.fromRGB(255,255,255),
-					Size = UDim2.new(1,0,1,0),
-    				Position = UDim2.new(0,0,0,0),
-    			}):Play()
-    			task.wait(0.1)
-    			game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.1),{
-    				Size = UDim2.new(0.5,0,1,0),
-    				Position = UDim2.new(.5,0,0,0),
-    			}):Play()
-			else
-				game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.15),{
-					BackgroundColor3 = Color3.fromRGB(150,150,150),
-					Size = UDim2.new(1,0,1,0),
-					Position = UDim2.new(0,0,0,0),
-				}):Play()
-				task.wait(0.1)
-				game.TweenService:Create(temp.Slider.Button,TweenInfo.new(0.1),{
-					Size = UDim2.new(0.5,0,1,0),
-					Position = UDim2.new(0,0,0,0),
-				}):Play()
-			end
+			temp.Toggle.On.Visible = State.Enabled
 		end
 	end)
 
