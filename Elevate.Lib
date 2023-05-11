@@ -63,7 +63,7 @@ function Control.CreateList(tab,listname)
 	local newlist = assets.ListTemplate:Clone()
 	newlist.Parent = tab
 	newlist.Name = listname
-	
+	newlist.Label.Text = listname
   	spawn(function()
     		while task.wait() do
       			newlist.Size = UDim2.new(0.32,0,0,newlist.UI.AbsoluteContentSize.Y+6)
