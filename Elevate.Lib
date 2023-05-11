@@ -29,7 +29,7 @@ function Control.CreateNewTab(ui,tabname)
 	tabbutton.Visible = true
 	
 	tabbutton.Button.MouseButton1Click:Connect(function()
-		for i,v in pairs(ui.Main.List.Frame:GetChildren()) do
+		for i,v in pairs(ui.Main.Lists.Frame:GetChildren()) do
 			if v:IsA("Frame") then
         			v.Visible = false
       			end
@@ -37,16 +37,21 @@ function Control.CreateNewTab(ui,tabname)
     
     		for i,v in pairs(ui.Main.List.Frame:GetChildren()) do
 			if v:IsA("Frame") then
-        			--v.Visible = false
+        			v.Transparency = 1
+        			v.Color.Visible = false
+				v.Button.TextColor3 = Color3.fromRGB(150,150,150)
       			end
 		end
     
 		newtab.Visible = true
+        	tabbutton.Transparency = .9
+        	tabbutton.Color.Visible = true
+		tabbutton.Button.TextColor3 = Color3.fromRGB(255,255,255)
 	end)
 	
   	spawn(function()
     		while task.wait() do
-      			newtab.CanvasSize = UDim2.new(1, 0, 0, newtab.UI.AbsoluteContentSize.Y)
+      			--newtab.CanvasSize = UDim2.new(1, 0, 0, newtab.UI.AbsoluteContentSize.Y)
     		end
   	end)
 	
