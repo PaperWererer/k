@@ -24,6 +24,7 @@ function Control.CreateNewTab(ui,tabname)
 	newtab.Visible = false
 
 	local tabbutton = assets.TabTemplate1:Clone()
+	tabbutton.Name = tabname
 	tabbutton.Parent = ui.Main.Buttons.Sections
 	tabbutton.Button.Text = tabname
 	tabbutton.Visible = true
