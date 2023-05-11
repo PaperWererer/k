@@ -25,10 +25,10 @@ function Control.CreateNewTab(ui,tabname)
 
 	local tabbutton = assets.TabTemplate1:Clone()
 	tabbutton.Parent = ui.Main.Buttons.Sections
-	tabbutton.Text = tabname
+	tabbutton.Button.Text = tabname
 	tabbutton.Visible = true
 	
-	tabbutton.MouseButton1Click:Connect(function()
+	tabbutton.Button.MouseButton1Click:Connect(function()
 		for i,v in pairs(ui.Main.List.Frame:GetChildren()) do
 			if v:IsA("Frame") then
         			v.Visible = false
