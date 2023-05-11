@@ -1,7 +1,8 @@
 if game.CoreGui:FindFirstChild("Elevate.Assets") then return game.CoreGui["Elevate.Assets"] end
 
-local elevate_assets = Instance.new("Folder",game.CoreGui)
+local elevate_assets = Instance.new("Folder")
 elevate_assets.Name = "Elevate.Assets"
+elevate_assets.Parent = game.CoreGui
 
 local tabtemplate2 = Instance.new("ScrollingFrame")
 tabtemplate2.ScrollBarImageTransparency = 0.8999999761581421
@@ -360,6 +361,20 @@ dropdown.ZIndex = 5
 dropdown.Name = "DropDown"
 dropdown.Parent = dropdown_template
 
+local uistroke_7 = Instance.new("UIStroke")
+uistroke_7.Color = Color3.new(1, 1, 1)
+uistroke_7.Transparency = .9
+uistroke_7.Parent = dropdown
+
+local uicorner_7 = Instance.new("UICorner")
+uicorner_7.CornerRadius = UDim.new(0, 2)
+uicorner_7.Parent = dropdown
+
+local ui = Instance.new("UIListLayout")
+ui.SortOrder = Enum.SortOrder.LayoutOrder
+ui.Name = "UI"
+ui.Parent = dropdown
+
 local selection_2 = Instance.new("TextButton")
 selection_2.Font = Enum.Font.SourceSans
 selection_2.Text = "Select.."
@@ -392,54 +407,10 @@ local open = Instance.new("BoolValue")
 open.Name = "Open"
 open.Parent = menu
 
-local ui = Instance.new("UIListLayout")
-ui.SortOrder = Enum.SortOrder.LayoutOrder
-ui.Name = "UI"
-ui.Parent = menu
-
-local button_2 = Instance.new("TextButton")
-button_2.Font = Enum.Font.SourceSans
-button_2.Text = "notarchs"
-button_2.TextColor3 = Color3.new(0.745098, 0.745098, 0.745098)
-button_2.TextSize = 13
-button_2.TextWrapped = true
-button_2.BackgroundColor3 = Color3.new(0, 0, 0)
-button_2.BackgroundTransparency = 1
-button_2.BorderSizePixel = 0
-button_2.Size = UDim2.new(1, 0, 0, 15)
-button_2.Visible = true
-button_2.ZIndex = 5
-button_2.Name = "Button"
-button_2.Parent = menu
-
-local button_3 = Instance.new("TextButton")
-button_3.Font = Enum.Font.SourceSans
-button_3.Text = "aseden"
-button_3.TextColor3 = Color3.new(0.745098, 0.745098, 0.745098)
-button_3.TextSize = 13
-button_3.TextWrapped = true
-button_3.BackgroundColor3 = Color3.new(0, 0, 0)
-button_3.BackgroundTransparency = 1
-button_3.BorderSizePixel = 0
-button_3.Size = UDim2.new(1, 0, 0, 15)
-button_3.Visible = true
-button_3.ZIndex = 5
-button_3.Name = "Button"
-button_3.Parent = menu
-
-local uistroke_7 = Instance.new("UIStroke")
-uistroke_7.Color = Color3.new(1, 1, 1)
-uistroke_7.Transparency = .9
-uistroke_7.Parent = dropdown
-
-local uicorner_7 = Instance.new("UICorner")
-uicorner_7.CornerRadius = UDim.new(0, 2)
-uicorner_7.Parent = dropdown
-
 local ui_2 = Instance.new("UIListLayout")
 ui_2.SortOrder = Enum.SortOrder.LayoutOrder
 ui_2.Name = "UI"
-ui_2.Parent = dropdown
+ui_2.Parent = menu
 
 local button_template = Instance.new("Frame")
 button_template.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
@@ -460,23 +431,23 @@ local uicorner_8 = Instance.new("UICorner")
 uicorner_8.CornerRadius = UDim.new(0, 2)
 uicorner_8.Parent = button_template
 
-local button_4 = Instance.new("TextButton")
-button_4.Font = Enum.Font.SourceSans
-button_4.TextColor3 = Color3.new(0.784314, 0.784314, 0.784314)
-button_4.TextSize = 14
-button_4.TextWrapped = true
-button_4.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
-button_4.BackgroundTransparency = 0.800000011920929
-button_4.BorderSizePixel = 0
-button_4.Size = UDim2.new(1, 0, 1, 0)
-button_4.Visible = true
-button_4.ZIndex = 5
-button_4.Name = "Button"
-button_4.Parent = button_template
+local button_2 = Instance.new("TextButton")
+button_2.Font = Enum.Font.SourceSans
+button_2.TextColor3 = Color3.new(0.784314, 0.784314, 0.784314)
+button_2.TextSize = 14
+button_2.TextWrapped = true
+button_2.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+button_2.BackgroundTransparency = 0.800000011920929
+button_2.BorderSizePixel = 0
+button_2.Size = UDim2.new(1, 0, 1, 0)
+button_2.Visible = true
+button_2.ZIndex = 5
+button_2.Name = "Button"
+button_2.Parent = button_template
 
 local elevate = Instance.new("ScreenGui")
 elevate.IgnoreGuiInset = false
-elevate.ResetOnSpawn = false
+elevate.ResetOnSpawn = true
 elevate.Enabled = false
 elevate.ZIndexBehavior = Enum.ZIndexBehavior.Global
 elevate.Name = "Elevate"
@@ -680,20 +651,20 @@ color.Visible = false
 color.Name = "Color"
 color.Parent = tabtemplate1
 
-local button_5 = Instance.new("TextButton")
-button_5.Font = Enum.Font.SourceSans
-button_5.TextColor3 = Color3.new(0.588235, 0.588235, 0.588235)
-button_5.TextScaled = true
-button_5.TextSize = 14
-button_5.TextWrapped = true
-button_5.TextXAlignment = Enum.TextXAlignment.Left
-button_5.BackgroundColor3 = Color3.new(1, 1, 1)
-button_5.BackgroundTransparency = 1
-button_5.Position = UDim2.new(0.0582807101, 0, 0.159999996, 0)
-button_5.Size = UDim2.new(0.941719294, 0, 0.640000105, 0)
-button_5.Visible = true
-button_5.Name = "Button"
-button_5.Parent = tabtemplate1
+local button_3 = Instance.new("TextButton")
+button_3.Font = Enum.Font.SourceSans
+button_3.TextColor3 = Color3.new(0.588235, 0.588235, 0.588235)
+button_3.TextScaled = true
+button_3.TextSize = 14
+button_3.TextWrapped = true
+button_3.TextXAlignment = Enum.TextXAlignment.Left
+button_3.BackgroundColor3 = Color3.new(1, 1, 1)
+button_3.BackgroundTransparency = 1
+button_3.Position = UDim2.new(0.0582807101, 0, 0.159999996, 0)
+button_3.Size = UDim2.new(0.941719294, 0, 0.640000105, 0)
+button_3.Visible = true
+button_3.Name = "Button"
+button_3.Parent = tabtemplate1
 
 local list_template = Instance.new("Frame")
 list_template.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -731,14 +702,29 @@ label_7.Visible = true
 label_7.Name = "Label"
 label_7.Parent = list_template
 
-local dframe_1 = Instance.new("Frame")
-dframe_1.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
-dframe_1.BorderSizePixel = 0
-dframe_1.Position = UDim2.new(0, 0, 0, 17)
-dframe_1.Size = UDim2.new(1, 0, 0, 1)
-dframe_1.Visible = true
-dframe_1.Name = "!"
-dframe_1.Parent = list_template
+local line = Instance.new("Frame")
+line.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+line.BorderSizePixel = 0
+line.Position = UDim2.new(0, 0, 0, 17)
+line.Size = UDim2.new(1, 0, 0, 1)
+line.Visible = true
+line.Name = "Line"
+line.Parent = list_template
+
+local dropdown_2 = Instance.new("TextButton")
+dropdown_2.Font = Enum.Font.SourceSans
+dropdown_2.Text = "notarchs"
+dropdown_2.TextColor3 = Color3.new(0.745098, 0.745098, 0.745098)
+dropdown_2.TextSize = 13
+dropdown_2.TextWrapped = true
+dropdown_2.BackgroundColor3 = Color3.new(0, 0, 0)
+dropdown_2.BackgroundTransparency = 1
+dropdown_2.BorderSizePixel = 0
+dropdown_2.Size = UDim2.new(1, 0, 0, 15)
+dropdown_2.Visible = true
+dropdown_2.ZIndex = 5
+dropdown_2.Name = "DropDown"
+dropdown_2.Parent = elevate_assets
 
 --//Modules
 
@@ -785,4 +771,5 @@ task.spawn(function()
 			end
 		end
 	end)
+	
 end)
