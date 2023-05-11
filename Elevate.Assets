@@ -3,42 +3,6 @@ if game.CoreGui:FindFirstChild("Elevate.Assets") then return game.CoreGui["Eleva
 local elevate_assets = Instance.new("Folder",game.CoreGui)
 elevate_assets.Name = "Elevate.Assets"
 
-local tabtemplate1 = Instance.new("Frame")
-tabtemplate1.BackgroundColor3 = Color3.new(1, 1, 1)
-tabtemplate1.BackgroundTransparency = 1
-tabtemplate1.BorderSizePixel = 0
-tabtemplate1.Size = UDim2.new(1, 0, 0, 25)
-tabtemplate1.Visible = true
-tabtemplate1.Name = "TabTemplate1"
-tabtemplate1.Parent = elevate_assets
-
-local uigradient = Instance.new("UIGradient")
-uigradient.Parent = tabtemplate1
-
-local color = Instance.new("Frame")
-color.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
-color.BorderSizePixel = 0
-color.Size = UDim2.new(0, 1, 1, 0)
-color.Visible = false
-color.Name = "Color"
-color.Parent = tabtemplate1
-
-local label = Instance.new("TextButton")
-label.Font = Enum.Font.SourceSans
-label.Text = "Button"
-label.TextColor3 = Color3.new(0.588235, 0.588235, 0.588235)
-label.TextScaled = true
-label.TextSize = 14
-label.TextWrapped = true
-label.TextXAlignment = Enum.TextXAlignment.Left
-label.BackgroundColor3 = Color3.new(1, 1, 1)
-label.BackgroundTransparency = 1
-label.Position = UDim2.new(0.0582807101, 0, 0.159999996, 0)
-label.Size = UDim2.new(0.941719294, 0, 0.640000105, 0)
-label.Visible = true
-label.Name = "Button"
-label.Parent = tabtemplate1
-
 local tabtemplate2 = Instance.new("ScrollingFrame")
 tabtemplate2.ScrollBarImageTransparency = 0.8999999761581421
 tabtemplate2.ScrollBarThickness = 4
@@ -56,141 +20,6 @@ uilist_layout.Padding = UDim.new(0.009999999776482582, 0)
 uilist_layout.FillDirection = Enum.FillDirection.Horizontal
 uilist_layout.SortOrder = Enum.SortOrder.LayoutOrder
 uilist_layout.Parent = tabtemplate2
-
-local list_template = Instance.new("Frame")
-list_template.BackgroundColor3 = Color3.new(1, 1, 1)
-list_template.BackgroundTransparency = 0.8999999761581421
-list_template.Size = UDim2.new(0.319999993, 0, 0, 200)
-list_template.Visible = true
-list_template.Name = "ListTemplate"
-list_template.Parent = tabtemplate2
-
-local corner = Instance.new("UICorner")
-corner.CornerRadius = UDim.new(0, 6)
-corner.Name = "Corner"
-corner.Parent = list_template
-
-local ui = Instance.new("UIListLayout")
-ui.Padding = UDim.new(0, 4)
-ui.HorizontalAlignment = Enum.HorizontalAlignment.Center
-ui.SortOrder = Enum.SortOrder.LayoutOrder
-ui.Name = "UI"
-ui.Parent = list_template
-
-local label_2 = Instance.new("TextLabel")
-label_2.Font = Enum.Font.SourceSans
-label_2.Text = "General"
-label_2.TextColor3 = Color3.new(1, 1, 1)
-label_2.TextScaled = true
-label_2.TextSize = 18
-label_2.TextWrapped = true
-label_2.TextXAlignment = Enum.TextXAlignment.Left
-label_2.BackgroundColor3 = Color3.new(1, 1, 1)
-label_2.BackgroundTransparency = 1
-label_2.Position = UDim2.new(0.0500000007, 0, 0, 0)
-label_2.Size = UDim2.new(0.899999976, 0, 0, 15)
-label_2.Visible = true
-label_2.Name = "Label"
-label_2.Parent = list_template
-
-local  = Instance.new("Frame")
-.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
-.BorderSizePixel = 0
-.Position = UDim2.new(0, 0, 0, 17)
-.Size = UDim2.new(1, 0, 0, 1)
-.Visible = true
-.Name = "!"
-.Parent = list_template
-
-local list_template_2 = Instance.new("Frame")
-list_template_2.BackgroundColor3 = Color3.new(1, 1, 1)
-list_template_2.BackgroundTransparency = 0.8999999761581421
-list_template_2.Size = UDim2.new(0.319999993, 0, 0, 200)
-list_template_2.Visible = true
-list_template_2.Name = "ListTemplate"
-list_template_2.Parent = tabtemplate2
-
-local corner_2 = Instance.new("UICorner")
-corner_2.CornerRadius = UDim.new(0, 6)
-corner_2.Name = "Corner"
-corner_2.Parent = list_template_2
-
-local ui_2 = Instance.new("UIListLayout")
-ui_2.Padding = UDim.new(0, 4)
-ui_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
-ui_2.SortOrder = Enum.SortOrder.LayoutOrder
-ui_2.Name = "UI"
-ui_2.Parent = list_template_2
-
-local label_3 = Instance.new("TextLabel")
-label_3.Font = Enum.Font.SourceSans
-label_3.Text = "Viewport Frame"
-label_3.TextColor3 = Color3.new(1, 1, 1)
-label_3.TextScaled = true
-label_3.TextSize = 18
-label_3.TextWrapped = true
-label_3.TextXAlignment = Enum.TextXAlignment.Left
-label_3.BackgroundColor3 = Color3.new(1, 1, 1)
-label_3.BackgroundTransparency = 1
-label_3.Position = UDim2.new(0.0500000007, 0, 0, 0)
-label_3.Size = UDim2.new(0.899999976, 0, 0, 15)
-label_3.Visible = true
-label_3.Name = "Label"
-label_3.Parent = list_template_2
-
-local _2 = Instance.new("Frame")
-_2.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
-_2.BorderSizePixel = 0
-_2.Position = UDim2.new(0, 0, 0, 17)
-_2.Size = UDim2.new(1, 0, 0, 1)
-_2.Visible = true
-_2.Name = "!"
-_2.Parent = list_template_2
-
-local list_template_3 = Instance.new("Frame")
-list_template_3.BackgroundColor3 = Color3.new(1, 1, 1)
-list_template_3.BackgroundTransparency = 0.8999999761581421
-list_template_3.Size = UDim2.new(0.319999993, 0, 0, 200)
-list_template_3.Visible = true
-list_template_3.Name = "ListTemplate"
-list_template_3.Parent = tabtemplate2
-
-local corner_3 = Instance.new("UICorner")
-corner_3.CornerRadius = UDim.new(0, 6)
-corner_3.Name = "Corner"
-corner_3.Parent = list_template_3
-
-local ui_3 = Instance.new("UIListLayout")
-ui_3.Padding = UDim.new(0, 4)
-ui_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
-ui_3.SortOrder = Enum.SortOrder.LayoutOrder
-ui_3.Name = "UI"
-ui_3.Parent = list_template_3
-
-local label_4 = Instance.new("TextLabel")
-label_4.Font = Enum.Font.SourceSans
-label_4.Text = "Image Frame"
-label_4.TextColor3 = Color3.new(1, 1, 1)
-label_4.TextScaled = true
-label_4.TextSize = 18
-label_4.TextWrapped = true
-label_4.TextXAlignment = Enum.TextXAlignment.Left
-label_4.BackgroundColor3 = Color3.new(1, 1, 1)
-label_4.BackgroundTransparency = 1
-label_4.Position = UDim2.new(0.0500000007, 0, 0, 0)
-label_4.Size = UDim2.new(0.899999976, 0, 0, 15)
-label_4.Visible = true
-label_4.Name = "Label"
-label_4.Parent = list_template_3
-
-local _3 = Instance.new("Frame")
-_3.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
-_3.BorderSizePixel = 0
-_3.Position = UDim2.new(0, 0, 0, 17)
-_3.Size = UDim2.new(1, 0, 0, 1)
-_3.Visible = true
-_3.Name = "!"
-_3.Parent = list_template_3
 
 local image_template = Instance.new("Frame")
 image_template.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -232,7 +61,6 @@ viewport.Parent = viewport_template
 
 local uistroke = Instance.new("UIStroke")
 uistroke.Color = Color3.new(1, 1, 1)
-uistroke.Transparency = .9
 uistroke.Parent = viewport
 
 local uicorner = Instance.new("UICorner")
@@ -256,19 +84,19 @@ label_template.Visible = true
 label_template.Name = "LabelTemplate"
 label_template.Parent = elevate_assets
 
-local label_5 = Instance.new("TextLabel")
-label_5.Font = Enum.Font.SourceSans
-label_5.Text = "Text Label"
-label_5.TextColor3 = Color3.new(1, 1, 1)
-label_5.TextSize = 15
-label_5.TextWrapped = true
-label_5.TextXAlignment = Enum.TextXAlignment.Left
-label_5.BackgroundColor3 = Color3.new(1, 1, 1)
-label_5.BackgroundTransparency = 1
-label_5.Size = UDim2.new(1, 0, 0, 15)
-label_5.Visible = true
-label_5.Name = "Label"
-label_5.Parent = label_template
+local label = Instance.new("TextLabel")
+label.Font = Enum.Font.SourceSans
+label.Text = "Text Label"
+label.TextColor3 = Color3.new(1, 1, 1)
+label.TextSize = 15
+label.TextWrapped = true
+label.TextXAlignment = Enum.TextXAlignment.Left
+label.BackgroundColor3 = Color3.new(1, 1, 1)
+label.BackgroundTransparency = 1
+label.Size = UDim2.new(1, 0, 0, 15)
+label.Visible = true
+label.Name = "Label"
+label.Parent = label_template
 
 local toggletemplate = Instance.new("Frame")
 toggletemplate.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -279,21 +107,21 @@ toggletemplate.Visible = true
 toggletemplate.Name = "ToggleTemplate"
 toggletemplate.Parent = elevate_assets
 
-local label_6 = Instance.new("TextLabel")
-label_6.Font = Enum.Font.SourceSans
-label_6.Text = "Enable"
-label_6.TextColor3 = Color3.new(0.784314, 0.784314, 0.784314)
-label_6.TextScaled = true
-label_6.TextSize = 18
-label_6.TextWrapped = true
-label_6.TextXAlignment = Enum.TextXAlignment.Left
-label_6.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
-label_6.BackgroundTransparency = 1
-label_6.Position = UDim2.new(0.138308093, 0, 0, 0)
-label_6.Size = UDim2.new(0.861691833, 0, 0, 15)
-label_6.Visible = true
-label_6.Name = "Label"
-label_6.Parent = toggletemplate
+local label_2 = Instance.new("TextLabel")
+label_2.Font = Enum.Font.SourceSans
+label_2.Text = "Enable"
+label_2.TextColor3 = Color3.new(0.784314, 0.784314, 0.784314)
+label_2.TextScaled = true
+label_2.TextSize = 18
+label_2.TextWrapped = true
+label_2.TextXAlignment = Enum.TextXAlignment.Left
+label_2.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
+label_2.BackgroundTransparency = 1
+label_2.Position = UDim2.new(0.138308093, 0, 0, 0)
+label_2.Size = UDim2.new(0.861691833, 0, 0, 15)
+label_2.Visible = true
+label_2.Name = "Label"
+label_2.Parent = toggletemplate
 
 local button = Instance.new("TextButton")
 button.Font = Enum.Font.SourceSans
@@ -354,20 +182,20 @@ text_boxtemplate.Visible = true
 text_boxtemplate.Name = "TextBoxTemplate"
 text_boxtemplate.Parent = elevate_assets
 
-local label_7 = Instance.new("TextLabel")
-label_7.Font = Enum.Font.SourceSans
-label_7.Text = "Text Box"
-label_7.TextColor3 = Color3.new(1, 1, 1)
-label_7.TextScaled = true
-label_7.TextSize = 18
-label_7.TextWrapped = true
-label_7.TextXAlignment = Enum.TextXAlignment.Left
-label_7.BackgroundColor3 = Color3.new(1, 1, 1)
-label_7.BackgroundTransparency = 1
-label_7.Size = UDim2.new(1, 0, 0, 15)
-label_7.Visible = true
-label_7.Name = "Label"
-label_7.Parent = text_boxtemplate
+local label_3 = Instance.new("TextLabel")
+label_3.Font = Enum.Font.SourceSans
+label_3.Text = "Text Box"
+label_3.TextColor3 = Color3.new(1, 1, 1)
+label_3.TextScaled = true
+label_3.TextSize = 18
+label_3.TextWrapped = true
+label_3.TextXAlignment = Enum.TextXAlignment.Left
+label_3.BackgroundColor3 = Color3.new(1, 1, 1)
+label_3.BackgroundTransparency = 1
+label_3.Size = UDim2.new(1, 0, 0, 15)
+label_3.Visible = true
+label_3.Name = "Label"
+label_3.Parent = text_boxtemplate
 
 local text_box = Instance.new("Frame")
 text_box.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
@@ -412,19 +240,19 @@ slider_template.Visible = true
 slider_template.Name = "SliderTemplate"
 slider_template.Parent = elevate_assets
 
-local label_8 = Instance.new("TextLabel")
-label_8.Font = Enum.Font.SourceSans
-label_8.Text = "Slider "
-label_8.TextColor3 = Color3.new(1, 1, 1)
-label_8.TextSize = 15
-label_8.TextWrapped = true
-label_8.TextXAlignment = Enum.TextXAlignment.Left
-label_8.BackgroundColor3 = Color3.new(1, 1, 1)
-label_8.BackgroundTransparency = 1
-label_8.Size = UDim2.new(1, 0, 0, 15)
-label_8.Visible = true
-label_8.Name = "Label"
-label_8.Parent = slider_template
+local label_4 = Instance.new("TextLabel")
+label_4.Font = Enum.Font.SourceSans
+label_4.Text = "Slider "
+label_4.TextColor3 = Color3.new(1, 1, 1)
+label_4.TextSize = 15
+label_4.TextWrapped = true
+label_4.TextXAlignment = Enum.TextXAlignment.Left
+label_4.BackgroundColor3 = Color3.new(1, 1, 1)
+label_4.BackgroundTransparency = 1
+label_4.Size = UDim2.new(1, 0, 0, 15)
+label_4.Visible = true
+label_4.Name = "Label"
+label_4.Parent = slider_template
 
 local bar = Instance.new("Frame")
 bar.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
@@ -501,20 +329,20 @@ dropdown_template.Visible = true
 dropdown_template.Name = "DropDownTemplate"
 dropdown_template.Parent = elevate_assets
 
-local label_9 = Instance.new("TextLabel")
-label_9.Font = Enum.Font.SourceSans
-label_9.Text = "Filter"
-label_9.TextColor3 = Color3.new(1, 1, 1)
-label_9.TextScaled = true
-label_9.TextSize = 18
-label_9.TextWrapped = true
-label_9.TextXAlignment = Enum.TextXAlignment.Left
-label_9.BackgroundColor3 = Color3.new(1, 1, 1)
-label_9.BackgroundTransparency = 1
-label_9.Size = UDim2.new(1, 0, 0, 15)
-label_9.Visible = true
-label_9.Name = "Label"
-label_9.Parent = dropdown_template
+local label_5 = Instance.new("TextLabel")
+label_5.Font = Enum.Font.SourceSans
+label_5.Text = "Filter"
+label_5.TextColor3 = Color3.new(1, 1, 1)
+label_5.TextScaled = true
+label_5.TextSize = 18
+label_5.TextWrapped = true
+label_5.TextXAlignment = Enum.TextXAlignment.Left
+label_5.BackgroundColor3 = Color3.new(1, 1, 1)
+label_5.BackgroundTransparency = 1
+label_5.Size = UDim2.new(1, 0, 0, 15)
+label_5.Visible = true
+label_5.Name = "Label"
+label_5.Parent = dropdown_template
 
 local dropdown = Instance.new("Frame")
 dropdown.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
@@ -558,10 +386,10 @@ local open = Instance.new("BoolValue")
 open.Name = "Open"
 open.Parent = menu
 
-local ui_4 = Instance.new("UIListLayout")
-ui_4.SortOrder = Enum.SortOrder.LayoutOrder
-ui_4.Name = "UI"
-ui_4.Parent = menu
+local ui = Instance.new("UIListLayout")
+ui.SortOrder = Enum.SortOrder.LayoutOrder
+ui.Name = "UI"
+ui.Parent = menu
 
 local button_2 = Instance.new("TextButton")
 button_2.Font = Enum.Font.SourceSans
@@ -601,10 +429,10 @@ local uicorner_7 = Instance.new("UICorner")
 uicorner_7.CornerRadius = UDim.new(0, 2)
 uicorner_7.Parent = dropdown
 
-local ui_5 = Instance.new("UIListLayout")
-ui_5.SortOrder = Enum.SortOrder.LayoutOrder
-ui_5.Name = "UI"
-ui_5.Parent = dropdown
+local ui_2 = Instance.new("UIListLayout")
+ui_2.SortOrder = Enum.SortOrder.LayoutOrder
+ui_2.Name = "UI"
+ui_2.Parent = dropdown
 
 local button_template = Instance.new("Frame")
 button_template.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.207843)
@@ -681,21 +509,21 @@ frame.Size = UDim2.new(1, 0, 0, 1)
 frame.Visible = true
 frame.Parent = top
 
-local label_10 = Instance.new("TextLabel")
-label_10.Font = Enum.Font.Unknown
-label_10.Text = "ELEVATE"
-label_10.TextColor3 = Color3.new(0.447059, 0.580392, 0.756863)
-label_10.TextScaled = true
-label_10.TextSize = 14
-label_10.TextWrapped = true
-label_10.TextXAlignment = Enum.TextXAlignment.Left
-label_10.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
-label_10.BackgroundTransparency = 1
-label_10.Position = UDim2.new(0.0564227551, 0, 0.140252218, 0)
-label_10.Size = UDim2.new(0.253409952, 0, 0.655202091, 0)
-label_10.Visible = true
-label_10.Name = "Label"
-label_10.Parent = top
+local label_6 = Instance.new("TextLabel")
+label_6.Font = Enum.Font.Unknown
+label_6.Text = "ELEVATE"
+label_6.TextColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+label_6.TextScaled = true
+label_6.TextSize = 14
+label_6.TextWrapped = true
+label_6.TextXAlignment = Enum.TextXAlignment.Left
+label_6.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+label_6.BackgroundTransparency = 1
+label_6.Position = UDim2.new(0.0564227551, 0, 0.140252218, 0)
+label_6.Size = UDim2.new(0.253409952, 0, 0.655202091, 0)
+label_6.Visible = true
+label_6.Name = "Label"
+label_6.Parent = top
 
 local logo = Instance.new("ImageLabel")
 logo.Image = "http://www.roblox.com/asset/?id=6798365555"
@@ -821,6 +649,86 @@ frame_3.Parent = lists
 local uiaspect_ratio_constraint = Instance.new("UIAspectRatioConstraint")
 uiaspect_ratio_constraint.AspectRatio = 1.7339180707931519
 uiaspect_ratio_constraint.Parent = main
+
+local tabtemplate1 = Instance.new("Frame")
+tabtemplate1.BackgroundColor3 = Color3.new(1, 1, 1)
+tabtemplate1.BackgroundTransparency = 1
+tabtemplate1.BorderSizePixel = 0
+tabtemplate1.Size = UDim2.new(1, 0, 0, 25)
+tabtemplate1.Visible = true
+tabtemplate1.Name = "TabTemplate1"
+tabtemplate1.Parent = elevate_assets
+
+local uigradient = Instance.new("UIGradient")
+uigradient.Parent = tabtemplate1
+
+local color = Instance.new("Frame")
+color.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+color.BorderSizePixel = 0
+color.Size = UDim2.new(0, 1, 1, 0)
+color.Visible = false
+color.Name = "Color"
+color.Parent = tabtemplate1
+
+local button_5 = Instance.new("TextButton")
+button_5.Font = Enum.Font.SourceSans
+button_5.TextColor3 = Color3.new(0.588235, 0.588235, 0.588235)
+button_5.TextScaled = true
+button_5.TextSize = 14
+button_5.TextWrapped = true
+button_5.TextXAlignment = Enum.TextXAlignment.Left
+button_5.BackgroundColor3 = Color3.new(1, 1, 1)
+button_5.BackgroundTransparency = 1
+button_5.Position = UDim2.new(0.0582807101, 0, 0.159999996, 0)
+button_5.Size = UDim2.new(0.941719294, 0, 0.640000105, 0)
+button_5.Visible = true
+button_5.Name = "Button"
+button_5.Parent = tabtemplate1
+
+local list_template = Instance.new("Frame")
+list_template.BackgroundColor3 = Color3.new(1, 1, 1)
+list_template.BackgroundTransparency = 0.8999999761581421
+list_template.Size = UDim2.new(0.319999993, 0, 0, 200)
+list_template.Visible = true
+list_template.Name = "ListTemplate"
+list_template.Parent = elevate_assets
+
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 6)
+corner.Name = "Corner"
+corner.Parent = list_template
+
+local ui_3 = Instance.new("UIListLayout")
+ui_3.Padding = UDim.new(0, 4)
+ui_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+ui_3.SortOrder = Enum.SortOrder.LayoutOrder
+ui_3.Name = "UI"
+ui_3.Parent = list_template
+
+local label_7 = Instance.new("TextLabel")
+label_7.Font = Enum.Font.SourceSans
+label_7.Text = "Image Frame"
+label_7.TextColor3 = Color3.new(1, 1, 1)
+label_7.TextScaled = true
+label_7.TextSize = 18
+label_7.TextWrapped = true
+label_7.TextXAlignment = Enum.TextXAlignment.Left
+label_7.BackgroundColor3 = Color3.new(1, 1, 1)
+label_7.BackgroundTransparency = 1
+label_7.Position = UDim2.new(0.0500000007, 0, 0, 0)
+label_7.Size = UDim2.new(0.899999976, 0, 0, 15)
+label_7.Visible = true
+label_7.Name = "Label"
+label_7.Parent = list_template
+
+local dframe_1 = Instance.new("Frame")
+dframe_1.BackgroundColor3 = Color3.new(0.447059, 0.580392, 0.756863)
+dframe_1.BorderSizePixel = 0
+dframe_1.Position = UDim2.new(0, 0, 0, 17)
+dframe_1.Size = UDim2.new(1, 0, 0, 1)
+dframe_1.Visible = true
+dframe_1.Name = "!"
+dframe_1.Parent = list_template
 
 --//Modules
 
