@@ -14,6 +14,36 @@ function Control.Setup(toggle)
     	end
     end)
     
+    task.spawn(function()
+		local UIS = game:GetService('UserInputService')
+		local dragToggle = nil
+		local dragStart = nil
+		local startPos = nil
+
+		ui.Main.Top.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+				dragToggle = true
+				dragStart = input.Position
+				startPos = ui.Main.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+
+		UIS.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				if dragToggle then
+					local delta = input.Position - dragStart
+					local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+					game:GetService('TweenService'):Create(ui.Main, TweenInfo.new(0.2), {Position = position}):Play()
+				end
+			end
+		end)
+	end)
+    
     return ui
 end
     
