@@ -231,7 +231,6 @@ function Control.CreateSlider(list,name,Min,Max,Suffix)
 
 	UIS.InputEnded:Connect(function(key,istyping)
 		if key.UserInputType == Enum.UserInputType.MouseButton1 then
-			print("Released")
 			State.Sliding = false
 		end
 	end)
@@ -248,7 +247,6 @@ function Control.CreateSlider(list,name,Min,Max,Suffix)
 			Slider.Position = sliderPosNew
 			Bfly.Size = UDim2.new(0,xOffsetClamped+2,1,0)
 			local newval = lerp(Min,Max,xOffsetClamped/(Bar.AbsoluteSize.X-4))
-			print(newval)
 
 			State.Value = math.clamp(math.floor(newval),Min,Max)
 			Label.Text = name.." - "..State.Value..Suffix
