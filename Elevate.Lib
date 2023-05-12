@@ -255,7 +255,7 @@ function Control.CreateSlider(list,name,Min,Max,Suffix)
 		end
 	end)
 	
-	return {Image = temp}
+	return {Slider = Template,State = State}
 end
 
 function Control.CreateDropDown(list,name,refreshfunc)
