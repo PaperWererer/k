@@ -243,7 +243,7 @@ function Control.CreateDropDown(list,name,refreshfunc)
 	local menu = selection.Menu
 	local open = menu.Open.Value
 
-	function trigger()
+	local function trigger()
 		if not open then
 			menu:TweenSize(UDim2.new(1, 0, 0, 45), "Out", "Sine", 0.15, true)
 			drop:TweenSize(UDim2.new(1, 0, 0, 60), "Out", "Sine", 0.15, true)
@@ -280,14 +280,6 @@ function Control.CreateDropDown(list,name,refreshfunc)
 				else
 					button.Text = v
 				end
-			end)
-			
-			button.MouseEnter:Connect(function()
-				button.BackgroundTransparency = 0.8
-			end)
-
-			button.MouseLeave:Connect(function()
-				button.BackgroundTransparency = 1
 			end)
 
 			button.MouseButton1Click:Connect(function()
