@@ -1,7 +1,11 @@
 local assets = loadstring(game:HttpGet("https://raw.githubusercontent.com/PaperWererer/k/main/Elevate.Assets", true))()
 local Control = {}
+local Loaded = {}
+local Buttons = {}
 
-function Control.Setup(toggle)
+function Control.Setup(toggle,filename)
+    if game.CoreGui:FindFirstChild("Elevate") then return end
+
     local ui = assets.Elevate:Clone()
     ui.Parent = game.CoreGui
     ui.Enabled = true
@@ -13,7 +17,38 @@ function Control.Setup(toggle)
     		ui.Enabled = not ui.Enabled
     	end
     end)
-    
+	
+	local function CheckFiles()
+	    local IsFile = isfile('Elevate/'..filename..'.Json')
+	    local IsFolder = isfolder('Elevate')
+	    if not IsFolder then makefolder('Elevate') end
+	    local EmptyTable = {}
+	    local TableToString = game:GetService("HttpService"):JSONEncode(EmptyTable)
+	    if not IsFile then writefile('Elevate/'..filename..'.Json', TableToString) end
+	end
+
+	local function SaveConfig(DATA)
+		CheckFiles()
+		task.wait()
+		writefile('Elevate/'..filename..'.Json', DATA)
+	end
+
+	local function LoadConfig()
+		CheckFiles()
+		local ConfigContents = readfile('Elevate/'..filename..'.Json')
+		local UNPACKED = game:GetService("HttpService"):JSONDecode(ConfigContents)
+		
+		Loaded = UNPACKED
+	end
+
+	task.spawn(function()
+	    while task.wait(2) do
+	        SaveConfig(game:GetService("HttpService"):JSONEncode(Buttons))
+	    end
+	end)
+
+	LoadConfig()
+
     task.spawn(function()
 		local UIS = game:GetService('UserInputService')
 		local dragToggle = nil
@@ -114,6 +149,14 @@ function Control.CreateToggle(list,name)
 	temp.Visible = true
 	temp.Label.Text = name
 
+	for i,v in pairs(Loaded) do
+		if v.Name == name then
+			State.Enabled = v.State
+		end
+	end
+
+	table.insert(Buttons,{Name = name,State = State.Enabled})
+	
 	temp.Button.InputBegan:Connect(function(key)
 		if key.UserInputType == Enum.UserInputType.MouseButton1 and not State.Debounce then
 			State.Debounce = true
@@ -123,6 +166,18 @@ function Control.CreateToggle(list,name)
 
 			State.Enabled = not State.Enabled
 			temp.Button.On.Visible = State.Enabled
+		end
+	end)
+
+	task.spawn(function()
+		while task.wait(1) do
+			temp.Button.On.Visible = State.Enabled
+			
+			for _,v in pairs(Buttons) do
+				if v.Name == name then
+					v.State = State.Enabled
+				end
+			end
 		end
 	end)
 
@@ -137,7 +192,7 @@ function Control.CreateButton(list,name,func)
 	temp.Button.MouseButton1Click:Connect(function()
 		func()
 	end)
-
+	
 	return {Button = temp}
 end
 
