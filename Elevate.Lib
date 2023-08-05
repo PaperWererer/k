@@ -358,7 +358,7 @@ function Control.CreateDropDown(list,name,refreshfunc)
 			end
 		end
 		
-		local items = pcall(refreshfunc)
+		local items = refreshfunc()
 		if items == nil or not items then items = {} end
 		
 		for i,v in pairs(items) do
