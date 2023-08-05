@@ -292,14 +292,14 @@ function Control.CreateSlider(list,name,Min,Max,Suffix)
 
 	Label.Text = name.." - "..State.Value..Suffix
 
-	function ForceVisualUpdate()
+	local function ForceVisualUpdate()
 		State.Value = math.clamp(State.Value,Min,Max)
 		Label.Text = name.." - "..State.Value..Suffix
 
 		local sliderPosNew = UDim2.new(0,State.Value/Max,0,-4)
 		Slider.Position = sliderPosNew
 	end
-	
+
 	mouse.Move:Connect(function()
 		if State.Sliding then
 			local xOffset = (mouse.X-Bar.AbsolutePosition.X)
