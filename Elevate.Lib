@@ -1,4 +1,5 @@
 local assets = loadstring(game:HttpGet("https://raw.githubusercontent.com/PaperWererer/k/main/Elevate.Assets", true))()
+
 local Control = {}
 local Loaded = {}
 local Buttons = {}
@@ -186,15 +187,6 @@ function Control.CreateViewport(list)
 	temp.Parent = list
 	
 	return {Viewport = temp.Viewport.ViewportFrame}
-end
-
-function Control.CreateImage(list,imageid)
-	local temp = assets.ImageTemplate:Clone()
-	temp.Parent = list
-	temp.Label.Text = name
-	temp.Image.Image = imageid
-	
-	return {Image = temp}
 end
 
 function Control.CreateSlider(list,name,Min,Max,Suffix)
