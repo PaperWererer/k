@@ -17,37 +17,6 @@ function Control.Setup(toggle,filename)
     		ui.Enabled = not ui.Enabled
     	end
     end)
-	
-	local function CheckFiles()
-	    local IsFile = isfile('Elevate/'..filename..'.Json')
-	    local IsFolder = isfolder('Elevate')
-	    if not IsFolder then makefolder('Elevate') end
-	    local EmptyTable = {}
-	    local TableToString = game:GetService("HttpService"):JSONEncode(EmptyTable)
-	    if not IsFile then writefile('Elevate/'..filename..'.Json', TableToString) end
-	end
-
-	local function SaveConfig(DATA)
-		CheckFiles()
-		task.wait()
-		writefile('Elevate/'..filename..'.Json', DATA)
-	end
-
-	local function LoadConfig()
-		CheckFiles()
-		local ConfigContents = readfile('Elevate/'..filename..'.Json')
-		local UNPACKED = game:GetService("HttpService"):JSONDecode(ConfigContents)
-		
-		Loaded = UNPACKED
-	end
-
-	task.spawn(function()
-	    while task.wait(2) do
-	        SaveConfig(game:GetService("HttpService"):JSONEncode(Buttons))
-	    end
-	end)
-
-	LoadConfig()
 
     task.spawn(function()
 		local UIS = game:GetService('UserInputService')
