@@ -195,7 +195,7 @@ function Control.CreateSlider(list,name,Min,Max,Suffix)
 		Value = Min,
 	}
 	
-	local plr = game.Players.LocalPlayer
+	local plr = game:GetService("Players").LocalPlayer
 	local UIS = game:GetService("UserInputService")
 	local Template = assets.SliderTemplate:Clone()
 	Template.Parent = list
